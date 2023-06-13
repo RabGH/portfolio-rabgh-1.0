@@ -1,8 +1,8 @@
-import React from "react"
-import { SocialIcon } from "react-social-icons"
-import { motion } from "framer-motion"
+import React from "react";
+import { SocialIcon } from "react-social-icons";
+import { motion } from "framer-motion";
 
-type Props = {}
+type Props = {};
 
 function Header({}: Props) {
     return (
@@ -58,7 +58,7 @@ function Header({}: Props) {
                 </p>
             </motion.div>
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;
