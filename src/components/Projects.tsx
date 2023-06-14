@@ -1,11 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 function Projects({}: Props) {
     const projects = [1, 2, 3, 4, 5];
     return (
-        <div
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
             className="scrollbar relative z-0 mx-auto flex 
             h-screen max-w-full flex-col items-center 
             justify-evenly overflow-hidden text-left"
@@ -51,7 +55,7 @@ function Projects({}: Props) {
                 className="absolute left-0 top-[30%] h-[500px] 
                 w-full -skew-y-12 bg-[#F7AB0A]/10"
             />
-        </div>
+        </motion.div>
     );
 }
 
