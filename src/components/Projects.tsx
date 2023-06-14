@@ -25,7 +25,11 @@ function Projects({}: Props) {
                         w-screen flex-shrink-0 snap-center flex-col 
                         items-center justify-center space-y-5 p-20 md:mt-20"
                     >
-                        <img
+                        <motion.img
+                            initial={{ y: -300, opacity: 0 }}
+                            transition={{ duration: 1.2 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                             src="/images/RealEstateIcon.jpeg"
                             alt="Real Estate Site Test"
                             className="md:w[400px] mx-auto h-[auto] md:h-[400px]"
