@@ -13,7 +13,9 @@ type Inputs = {
 
 function ContactMe({}: Props) {
     const { register, handleSubmit } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
+    const onSubmit: SubmitHandler<Inputs> = (formData) => (
+        window.location.href = ""
+    );
 
     return (
         <div
