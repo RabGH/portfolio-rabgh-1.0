@@ -10,6 +10,7 @@ function Skills({}: Props) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
+            viewport={{ once: true }}
             className="relative mx-auto flex h-screen 
             min-h-screen max-w-[2000px] flex-col items-center 
             justify-center text-center md:text-left xl:flex-row 
@@ -24,11 +25,6 @@ function Skills({}: Props) {
             </h3>
 
             <div className="grid grid-cols-4 gap-5">
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
                 <Skill />
                 <Skill />
                 <Skill />
