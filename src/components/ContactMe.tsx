@@ -84,35 +84,41 @@ function ContactMe() {
             >
                 <h3 className="toptitle">Contact</h3>
 
-                <div className="flex flex-col space-y-10">
-                    <h4 className="text-center text-4xl font-semibold">
+                <div className="mt-20 flex flex-col space-y-7 md:mt-0 xs:space-y-10">
+                    <h4 className="text-center text-2xl font-semibold md:text-3xl">
                         Let me know what you need.{" "}
                         <span className="underline decoration-[#F7AB0A]/50">
                             Contact me.
                         </span>
                     </h4>
 
-                    <div className="space-y-10">
-                        <div className="flex items-center justify-center space-x-5">
-                            <EnvelopeIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
-                            <p className="text-2xl">rabiighais@gmail.com</p>
+                    <div className="space-y-5">
+                        <div className="flex items-center justify-center space-x-3">
+                            <EnvelopeIcon className="h-6 w-6 animate-pulse text-[#F7AB0A] md:h-8 md:w-8" />
+                            <p className="text-1xl md:text-2xl">
+                                rabiighais@gmail.com
+                            </p>
                         </div>
 
-                        <div className="flex items-center justify-center space-x-5">
-                            <PhoneIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
-                            <p className="text-2xl">+961 71 557 750</p>
+                        <div className="flex items-center justify-center space-x-3">
+                            <PhoneIcon className="h-6 w-6 animate-pulse text-[#F7AB0A] md:h-8 md:w-8" />
+                            <p className="text-1xl md:text-2xl">
+                                +961 71 557 750
+                            </p>
                         </div>
 
-                        <div className="flex items-center justify-center space-x-5">
-                            <MapPinIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
-                            <p className="text-2xl">Lebanon, Beirut</p>
+                        <div className="flex items-center justify-center space-x-3">
+                            <MapPinIcon className="h-6 w-6 animate-pulse text-[#F7AB0A] md:h-8 md:w-8" />
+                            <p className="text-1xl md:text-2xl">
+                                Lebanon, Beirut
+                            </p>
                         </div>
                     </div>
                     <form
                         id="ContactForm"
                         ref={formRef}
                         onSubmit={handleSubmit}
-                        className="mx-auto flex w-fit flex-col space-y-2"
+                        className="mx-auto flex flex-col space-y-2"
                     >
                         <FormControl variant="outlined">
                             <div className="flex space-x-1">
@@ -159,7 +165,7 @@ function ContactMe() {
                                 onChange={handleAreaChange}
                             />
                         </FormControl>
-                        <div className="mt-5 flex flex-row items-center justify-evenly">
+                        <div className="mb-5 mt-5 flex flex-row items-center justify-evenly">
                             <Button
                                 variant="contained"
                                 type="submit"
@@ -182,7 +188,7 @@ function ContactMe() {
                                 variant="outlined"
                                 type="reset"
                                 size="large"
-                                className="contactButtonStyles"
+                                // className="contactButtonStyles"
                                 onClick={() => {
                                     formRef.current?.reset();
                                     setFormData(initialFormData);

@@ -33,7 +33,7 @@ function Projects({}: Props) {
                             viewport={{ once: true }}
                             src="/images/RealEstateIcon.jpeg"
                             alt="Real Estate Site Test"
-                            className="md:w[400px] mx-auto mt-10 h-[150px] md:h-[400px] xxs:mt-0"
+                            className="md:w[400px] mx-auto mt-10 h-[150px] w-[350px] md:h-[400px] xxs:mt-0"
                         />
 
                         <div className="space-y-5 px-0 md:px-10">
