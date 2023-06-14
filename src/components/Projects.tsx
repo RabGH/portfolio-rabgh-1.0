@@ -6,32 +6,43 @@ function Projects({}: Props) {
     const projects = [1, 2, 3, 4, 5];
     return (
         <div
-            className="relative z-0 mx-auto flex h-screen 
-            max-w-full flex-col items-center justify-evenly 
-            overflow-hidden text-left md:flex-row"
+            className="scrollbar relative z-0 mx-auto flex 
+            h-screen max-w-full flex-col items-center 
+            justify-evenly overflow-hidden text-left"
         >
             <h3 className="toptitle">Projects</h3>
             <div
-                className="relative z-20 flex w-full snap-x 
-                 snap-mandatory overflow-y-hidden overflow-x-scroll"
+                className="scrollbar relative z-20 flex w-full 
+                 snap-x snap-mandatory overflow-y-hidden overflow-x-scroll"
             >
                 {projects.map((project, i) => (
                     <div
-                        className="md:p-44 h-screen w-screen
-                     flex-shrink-0 snap-center flex-col items-center 
-                     justify-center space-y-5 p-20"
+                        className="md:p-34
+                        w-screen flex-shrink-0 snap-center flex-col 
+                        items-center justify-center space-y-5 p-20 md:mt-20"
                     >
                         <img
                             src="/images/RealEstateIcon.jpeg"
                             alt="Real Estate Site Test"
+                            className="md:w[400px] mx-auto h-[auto] md:h-[400px]"
                         />
-                        <div>
-                            <h4 className="text-center text-4xl font-semibold">
+
+                        <div className="space-y-5 px-0 md:px-10">
+                            <h4 className="text-center text-2xl font-semibold">
                                 <span className="underline decoration-[#F7AB0A]/50">
                                     Case Study {i + 1} of {projects.length}:
                                 </span>{" "}
                                 Real Estate Site
                             </h4>
+
+                            <p className="text-center text-base md:text-left s:text-lg">
+                                Zak Properties is a top-tier real estate
+                                brokerage in Dubai that specializes in selling
+                                luxurious apartments, villas, and townhouses, as
+                                well as showcasing off-plan projects. Whether
+                                you are a first-time buyer or an experienced
+                                investor.
+                            </p>
                         </div>
                     </div>
                 ))}
@@ -45,5 +56,3 @@ function Projects({}: Props) {
 }
 
 export default Projects;
-// {projects.length}
-// {i + 1}

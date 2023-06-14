@@ -6,13 +6,13 @@ type Props = {};
 function ExperienceCards({}: Props) {
     return (
         <article
-            className="flex h-[550px] w-[350px] flex-shrink-0 cursor-pointer 
-            snap-center flex-col items-center space-y-0 
-            overflow-hidden overflow-y-scroll rounded-lg bg-[#292929]
-            pb-10 pl-10 pr-10 pt-1 opacity-40 transition-opacity 
-            duration-200 hover:opacity-100 sm:w-[500px] 
-            sm:pt-5 md:h-auto md:w-[600px] md:overflow-hidden 
-            xl:w-[900px]"
+            className="scrollbar flex h-[550px] w-[350px] flex-shrink-0 
+            cursor-pointer snap-center flex-col items-center 
+            space-y-0 overflow-hidden overflow-y-scroll rounded-lg
+            bg-[#292929] pb-10 pl-10 pr-10 pt-1 opacity-40 
+            transition-opacity duration-200 hover:opacity-100 
+            sm:w-[500px] sm:pt-5 md:h-auto md:w-[600px] 
+            md:overflow-hidden xl:w-[900px]"
         >
             <motion.img
                 initial={{ y: -100, opacity: 0 }}
@@ -27,50 +27,50 @@ function ExperienceCards({}: Props) {
             />
 
             <div className="px-0 md:px-10">
-                <h4 className="text-2xl font-light md:mt-5 md:text-4xl xl:text-4xl">
+                <h4 className="text-2xl font-light xs:block md:mt-5 md:text-4xl xl:text-4xl hidden">
                     Real Estate Website
                 </h4>
                 <p className="mt-1 text-2xl md:font-bold">ZakProperties</p>
                 <div className="my-2 flex space-x-2">
                     {/*TypeScript*/}
                     <img
-                        className="h-10 w-10 rounded-full"
+                        className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                         src="/images/TS.png"
                         alt="Rabii Ghais"
                     />
                     {/*Next.js*/}
                     <img
-                        className="h-10 w-10 rounded-full"
+                        className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                         src="/images/next.jpeg"
                         alt="Rabii Ghais"
                     />
                     {/*VSCode*/}
                     <img
-                        className="h-10 w-10 rounded-full"
+                        className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                         src="/images/vscode.webp"
                         alt="Rabii Ghais"
                     />
                     {/*Material-UI*/}
                     <img
-                        className="h-10 w-10 rounded-full"
+                        className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                         src="/images/material-ui.png"
                         alt="Rabii Ghais"
                     />
                     {/*Sanity*/}
                     <img
-                        className="h-10 w-10 rounded-full"
+                        className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                         src="/images/sanity.jpg"
                         alt="Rabii Ghais"
                     />
                     {/*Vercel*/}
                     <img
-                        className="h-10 w-10 rounded-full"
+                        className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                         src="/images/vercel.webp"
                         alt="Rabii Ghais"
                     />
                     {/*React*/}
                     <img
-                        className="hidden h-10 w-10 rounded-full md:block"
+                        className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                         src="/images/reactlogo.jpg"
                         alt="Rabii Ghais"
                     />
@@ -79,7 +79,7 @@ function ExperienceCards({}: Props) {
                     Started project 2022 - present
                 </p>
 
-                <ul className="ml-5 list-disc space-y-4 text-sm">
+                <ul className="ml-3 list-disc space-y-3 text-sm">
                     <li>
                         Built a modern and responsive real estate website with
                         Next.js and React
