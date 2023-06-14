@@ -37,7 +37,7 @@ function ContactMe() {
         event.preventDefault();
         setLoading(true);
         try {
-            const response = await fetch("/api/contact", {
+            const response = await fetch("/api/contactMe/contact", {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: {
@@ -79,8 +79,8 @@ function ContactMe() {
             </Head>
             <div
                 className="relative mx-auto flex h-screen 
-                max-w-7xl flex-col items-center justify-evenly px-10 
-                text-center md:flex-row md:text-left"
+max-w-7xl flex-col items-center justify-evenly px-10 
+text-center md:flex-row md:text-left"
             >
                 <h3 className="toptitle">Contact</h3>
 

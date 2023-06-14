@@ -18,7 +18,7 @@
     transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40
   }
   .contactButtonStyles {
-    @apply animate-pulse;
+    @apply animate-pulse bg-[#F7AB0A];
   }
 }
 

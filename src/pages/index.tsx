@@ -11,10 +11,14 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Home Page</title>
+                <title>Portfolio Site Rabii Ghais</title>
                 <meta
                     name="description"
                     content="This is the home page of my app"
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
                 />
             </Head>
             <main className="z-0 h-screen snap-y snap-mandatory overflow-scroll bg-[rgb(36,36,36)] text-white">

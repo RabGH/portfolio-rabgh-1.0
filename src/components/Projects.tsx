@@ -21,6 +21,7 @@ function Projects({}: Props) {
             >
                 {projects.map((project, i) => (
                     <div
+                        key={i}
                         className="md:p-34
                         w-screen flex-shrink-0 snap-center flex-col 
                         items-center justify-center space-y-5 p-10 lg:mt-0"
@@ -32,7 +33,7 @@ function Projects({}: Props) {
                             viewport={{ once: true }}
                             src="/images/RealEstateIcon.jpeg"
                             alt="Real Estate Site Test"
-                            className="md:w[400px] mx-auto mt-10 h-[150px] xxs:mt-0 md:h-[400px]"
+                            className="md:w[400px] mx-auto mt-10 h-[150px] md:h-[400px] xxs:mt-0"
                         />
 
                         <div className="space-y-5 px-0 md:px-10">
