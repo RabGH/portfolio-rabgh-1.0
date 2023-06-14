@@ -18,8 +18,7 @@
     transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40
   }
   .contactButtonStyles {
-    @apply bg-[#F7AB0A] py-2 px-5 rounded-md text-black font-bold text-lg
-    shadow-md animate-pulse;
+    @apply animate-pulse;
   }
 }
 

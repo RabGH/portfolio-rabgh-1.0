@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
+    "@mui/material": "^5.13.5",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
@@ -23,7 +26,6 @@
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.44.3",
     "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^5.15.0",
     "typescript": "5.1.3"
