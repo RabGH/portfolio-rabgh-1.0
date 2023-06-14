@@ -5,7 +5,16 @@
     "editor.inlineSuggest.enabled": true,
     "css.validate": false,
     "tailwindCSS.includeLanguages": {
-        "typescript": "javascript",
-        "typescriptreact": "javascript"
-    }
+        "typescript": "typescriptreact",
+        "typescriptreact": "typescriptreact"
+    },
+    "tailwindCSS.experimental.classRegex": [
+        "tw`([^`]*)",
+        [
+            "className=\"([^\"]*)\""
+        ],
+        [
+            "class=\"([^\"]*)\""
+        ]
+    ]
 }
