@@ -5,12 +5,21 @@
 @layer components {
   .heroButton {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase 
-    text-xs tracking-widest text-gray-500 transition-all
-    hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40;
+    text-xs tracking-widest text-gray-500 transition-all 
+    hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40 
   }
   .toptitle {
     @apply absolute top-24 md:text-2xl uppercase 
     tracking-[20px] text-gray-500 
+  }
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 
+    py-4 border-[#242424] text-gray-500 placeholder-gray-500 
+    transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40
+  }
+  .contactButtonStyles {
+    @apply bg-[#F7AB0A] py-2 px-5 rounded-md text-black font-bold text-lg
+    shadow-md animate-pulse;
   }
 }
 
