@@ -12,7 +12,7 @@ function ExperienceCards({}: Props) {
             pb-10 pl-10 pr-10 pt-1 opacity-40 transition-opacity 
             duration-200 hover:opacity-100 sm:w-[500px] 
             sm:pt-5 md:h-auto 
-            md:w-[600px] xl:w-[900px] xl:overflow-hidden"
+            md:w-[600px] md:overflow-hidden xl:w-[900px]"
         >
             <motion.img
                 initial={{ y: -100, opacity: 0 }}
