@@ -8,7 +8,7 @@ function Header({}: Props) {
     return (
         <header
             className="sticky top-0 z-20 mx-auto flex max-w-7xl 
-        items-start justify-between p-5 xl:items-center"
+items-start justify-between p-5 xl:items-center"
         >
             <motion.div
                 initial={{ x: -500, opacity: 0, scale: 0.5 }}

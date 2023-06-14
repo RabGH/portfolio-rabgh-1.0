@@ -11,19 +11,15 @@ function About({}: Props) {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
             className="relative mx-auto flex h-screen max-w-7xl 
-        flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
+            flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
         >
-            <h3
-                className="toptitle"
-            >
-                About
-            </h3>
+            <h3 className="toptitle">About</h3>
             <motion.img
                 initial={{ x: -200, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="md:h-65 -mb-20 hidden h-66 w-56 
+                className="md:h-65 h-66 -mb-20 hidden w-56 
                 flex-shrink-0 rounded-full object-cover
                 md:mb-0 md:block md:w-64 md:rounded-lg xl:h-[500px] xl:w-[300px]"
                 src="/images/candidImage2.jpg"
@@ -38,7 +34,7 @@ function About({}: Props) {
                     background
                 </h4>
                 <p className="text-sm">
-                    Hello, my name is Rabii Ghaith and I'm a full-stack web
+                    Hello, my name is Rabii Ghaith and I&apos;m a full-stack web
                     developer with a passion for creating modern and responsive
                     websites and applications. I have experience working with
                     various technologies and languages, such as Next.js, React,
