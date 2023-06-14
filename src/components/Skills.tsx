@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Skill from "./Skill";
 
 type Props = {};
 
@@ -15,6 +16,24 @@ function Skills({}: Props) {
             xl:space-y-0 xl:px-10"
         >
             <h3 className="toptitle">Skills</h3>
+            <h3
+                className="absolute top-36 text-sm uppercase tracking-[3px]
+              text-gray-500"
+            >
+                Hover over a skill for currency proficiency
+            </h3>
+
+            <div className="grid grid-cols-4 gap-5">
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+            </div>
         </motion.div>
     );
 }
