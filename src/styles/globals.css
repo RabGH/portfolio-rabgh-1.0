@@ -27,7 +27,7 @@
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background-color: #F7AB0A;
+  background-color: rgb(36,36,36);
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
@@ -39,13 +39,13 @@
 }
 
 .scrollbar::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
 }
 
 @media (max-width: 425px) {
   .scrollbar::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 3px;
+    height: 3px;
   }
 }

@@ -27,7 +27,7 @@ function ExperienceCards({}: Props) {
             />
 
             <div className="px-0 md:px-10">
-                <h4 className="text-2xl font-light xs:block md:mt-5 md:text-4xl xl:text-4xl hidden">
+                <h4 className="hidden text-2xl font-light md:mt-5 md:text-4xl xl:text-4xl xs:block">
                     Real Estate Website
                 </h4>
                 <p className="mt-1 text-2xl md:font-bold">ZakProperties</p>
