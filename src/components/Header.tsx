@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { IconButton } from "@mui/material";
 import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { Social } from "@lib/types";
 
-type Props = {};
+type Props = {
+    socials: Social[];
+};
 
-function Header({}: Props) {
+function Header({ socials }: Props) {
     return (
         <header className="fixed top-0 z-20 mx-auto grid w-full grid-cols-12 items-center justify-center gap-4 p-5 md:mx-auto">
             <motion.div
@@ -16,27 +19,16 @@ function Header({}: Props) {
                 transition={{ duration: 1.5 }}
                 className="col-span-6 flex flex-row items-center justify-start xl:col-span-3 xl:col-start-2 xl:justify-end"
             >
-                <SocialIcon
-                    url="https://twitter.com/RABBIToCOM"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
-                <SocialIcon
-                    url="https://github.com/RabGH"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
-                <SocialIcon
-                    url="https://www.linkedin.com/in/rabii-ghaith/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
+                {socials.map((social) => (
+                    <SocialIcon
+                        key={social._id}
+                        url={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        fgColor="gray"
+                        bgColor="transparent"
+                    />
+                ))}
             </motion.div>
 
             <motion.div

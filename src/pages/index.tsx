@@ -9,10 +9,29 @@ import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import { Navbar } from "@/components/Navbar";
 import { motion } from "framer-motion";
-import { sanityClient } from "@lib/sanity";
-import { Experience, PageInfo, Skill, Project, Social } from "@lib/types";
+import { GetStaticProps, NextPage } from "next/types";
+import { PageInfo, Experience, Skill, Project, Social } from "@lib/types";
+import { fetchPageInfo } from "@utils/fetchPageInfo";
+import { fetchExperiences } from "@utils/fetchExperiences";
+import { fetchSkills } from "@utils/fetchSkills";
+import { fetchProjects } from "@utils/fetchProjects";
+import { fetchSocials } from "@utils/fetchSocials";
 
-export default function Home() {
+type Props = {
+    pageInfo: PageInfo;
+    experiences: Experience[];
+    skills: Skill[];
+    projects: Project[];
+    socials: Social[];
+};
+
+const Home: NextPage<Props> = ({
+    pageInfo,
+    experiences,
+    skills,
+    projects,
+    socials,
+}: Props) => {
     return (
         <>
             <Head>
@@ -28,10 +47,10 @@ export default function Home() {
             </Head>
             <main className="z-0 flex h-full flex-col bg-[rgb(36,36,36)] text-white">
                 <div className="container">
-                    <Header />
+                    <Header socials={socials} />
                 </div>
                 <section id="hero">
-                    <Hero />
+                    <Hero pageInfo={pageInfo} />
                 </section>
 
                 <section id="about">
@@ -64,68 +83,25 @@ export default function Home() {
             </motion.div>
         </>
     );
-}
+};
 
-export const getServerSideProps = async (context: any) => {
-    const experiencesQuery = `*[_type == "experience"]{
-      jobTitle,
-      companyImage,
-      company,
-      dateStarted,
-      dateEnded,
-      isCurrentlyWorkingHere,
-      technologies[]->{
-        title,
-        progress,
-        image
-      },
-      points
-    }`;
+export default Home;
 
-    const pageInfosQuery = `*[_type == "pageInfo"]{
-      name,
-      role,
-      heroImage,
-      profilePic,
-      phoneNumber,
-      email,
-      address,
-      socials[]->{
-        title,
-        url
-      }
-    }`;
-
-    const skillsQuery = `*[_type == "skill"]{
-      title,
-      progress,
-      image
-    }`;
-
-    const projectsQuery = `*[_type == "project"]{
-      title,
-      image,
-      summary,
-      technologies[]->{
-        title,
-        progress,
-        image
-      },
-      linkToBuild,
-      linkToSite
-    }`;
-
-    const experiences = await sanityClient.fetch(experiencesQuery);
-    const pageInfos = await sanityClient.fetch(pageInfosQuery);
-    const skills = await sanityClient.fetch(skillsQuery);
-    const projects = await sanityClient.fetch(projectsQuery);
+export const getStaticProps: GetStaticProps<Props> = async (context: any) => {
+    const pageInfo: PageInfo = await fetchPageInfo();
+    const experiences: Experience[] = await fetchExperiences();
+    const skills: Skill[] = await fetchSkills();
+    const projects: Project[] = await fetchProjects();
+    const socials: Social[] = await fetchSocials();
 
     return {
         props: {
             experiences,
-            pageInfos,
+            pageInfo,
             skills,
             projects,
+            socials,
         },
+        revalidate: 60,
     };
 };
