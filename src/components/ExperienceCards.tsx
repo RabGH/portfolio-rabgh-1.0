@@ -6,11 +6,11 @@ type Props = {};
 function ExperienceCards({}: Props) {
     return (
         <article
-            className="scrollbar flex h-[550px] w-[350px] flex-shrink-0 
-            cursor-pointer snap-center flex-col items-center 
-            space-y-0 overflow-hidden overflow-y-scroll rounded-lg
-            bg-[#292929] pb-10 pl-10 pr-10 pt-1 opacity-40 
-            transition-opacity duration-200 hover:opacity-100 
+            className="flex h-[550px] w-[350px] flex-shrink-0 cursor-pointer 
+            snap-center flex-col items-center space-y-0 
+            overflow-hidden overflow-y-scroll rounded-lg bg-[#292929]
+            pb-10 pl-10 pr-10 pt-1 opacity-40 transition-opacity 
+            duration-200 scrollbar hover:opacity-100 
             sm:w-[500px] sm:pt-5 md:h-auto md:w-[600px] 
             md:overflow-hidden xl:w-[900px]"
         >
