@@ -66,7 +66,7 @@ const Home: NextPage<Props> = ({
                 </section>
 
                 <section id="projects">
-                    <Projects />
+                    <Projects projects={projects} />
                 </section>
 
                 <section id="contact">

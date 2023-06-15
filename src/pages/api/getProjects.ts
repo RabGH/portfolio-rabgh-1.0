@@ -12,6 +12,7 @@ const query = groq`
   linkToBuild,
   image,
   technologies[]->{
+    _id,
     title,
     progress,
     image
