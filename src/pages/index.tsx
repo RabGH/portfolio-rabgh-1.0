@@ -16,6 +16,7 @@ import { fetchExperiences } from "@utils/fetchExperiences";
 import { fetchSkills } from "@utils/fetchSkills";
 import { fetchProjects } from "@utils/fetchProjects";
 import { fetchSocials } from "@utils/fetchSocials";
+import axios from "axios";
 
 type Props = {
     pageInfo: PageInfo;

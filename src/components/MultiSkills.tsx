@@ -24,7 +24,7 @@ function MultiSkills({ skills }: Props) {
                 className="absolute top-20 mt-20 text-sm uppercase tracking-[3px] text-gray-500
               md:text-base"
             >
-                Hover over a skill for currency proficiency
+                Hover over a skill for current proficiency
             </h3>
 
             <div className="mt-20 grid grid-cols-4 gap-5 xs:mt-0">
