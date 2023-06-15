@@ -12,7 +12,8 @@ const query = groq`
   address,
   email,
   phoneNumber,
-  socials
+  socials,
+  backgroundInformation
 }
 `;
 
