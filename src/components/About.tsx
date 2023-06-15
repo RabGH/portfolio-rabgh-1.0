@@ -1,10 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { PageInfo } from "@lib/types";
 
-type Props = {};
+type Props = {
+    pageInfo: PageInfo;
+};
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -22,10 +25,10 @@ function About({}: Props) {
                 className="md:h-65 h-66 -mb-20 hidden w-56 
                 flex-shrink-0 rounded-full object-cover
                 md:mb-0 md:block md:w-64 md:rounded-lg xl:h-[500px] xl:w-[300px]"
-                src="/images/candidImage2.jpg"
-                alt="Rabii Ghais"
+                src={pageInfo?.profilePic}
+                alt={pageInfo?.name}
             />
-            <div className="space-y-10 px-0 md:px-20 mt-10">
+            <div className="mt-10 space-y-10 px-0 md:px-20">
                 <h4 className="text-2xl font-semibold sm:mt-20 md:mt-10 md:block md:text-3xl xl:mt-10">
                     A{" "}
                     <span className="underline decoration-[#F7AB0A]/50">
