@@ -27,7 +27,7 @@ function MultiSkills({ skills }: Props) {
                 Hover over a skill for current proficiency
             </h3>
 
-            <div className="mt-20 grid grid-cols-4 gap-5 s:mt-0">
+            <div className="mt-20 grid animate-pulse grid-cols-4 gap-3 md:gap-5 s:mt-0">
                 {skills?.slice(0, skills?.length / 2)?.map((skill) => (
                     <SingleSkill key={skill?._id} skill={skill} />
                 ))}
