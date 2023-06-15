@@ -7,7 +7,12 @@ const query = groq`
 *[_type == "pageInfo"][0]{
   name,
   role,
-  profilePic
+  profilePic,
+  heroImage,
+  address,
+  email,
+  phoneNumber,
+  social
 }
 `;
 
