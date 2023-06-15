@@ -78,7 +78,7 @@ function Projects({ projects }: Props) {
                                                     width={100}
                                                     height={100}
                                                     placeholder="blur"
-                                                    blurDataURL="data:image/svg+xml;base64,..." // replace with your own data URL
+                                                    blurDataURL="data:image/svg+xml;base64,..."
                                                 />
                                             )
                                         )}

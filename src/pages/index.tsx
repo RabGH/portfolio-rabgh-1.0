@@ -85,53 +85,61 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
     const pageInfoQuery = `*[_type == "pageInfo"][0]{
-        _id,
-        name,
-        role,
-        profilePic,
-        heroImage,
-        address,
-        email,
-        phoneNumber,
-        socials,
-        backgroundInformation
-      }
-      `;
+_id,
+name,
+role,
+profilePic,
+heroImage,
+address,
+email,
+phoneNumber,
+socials,
+backgroundInformation
+}
+`;
     const experienceQuery = `*[_type == "experience"]{
-    _id,
-    title,
-    summary,
-    linkToSite,
-    linkToBuild,
-    image,
-    technologies[]->{
-      _id,
-      title
-    }
-  }`;
+_id,
+jobTitle,
+companyImage,
+company,
+dateStarted,
+dateEnded,
+isCurrentlyWorkingHere,
+technologies[]->{
+title,
+progress,
+image,
+_id
+},
+points
+}
+`;
     const skillQuery = `*[_type == "skill"]{
-    _id,
-    title,
-    progress,
-    image
-  }`;
+_id,
+title,
+progress,
+image
+}`;
     const projectQuery = `*[_type == "project"]{
-    _id,
-    title,
-    summary,
-    linkToSite,
-    linkToBuild,
-    image,
-    technologies[]->{
-      _id,
-      title
-    }
-  }`;
+_id,
+title,
+summary,
+linkToSite,
+linkToBuild,
+image,
+technologies[]->{
+_id,
+title,
+progress,
+image
+},
+}
+`;
     const socialQuery = `*[_type == "social"]{
-    _id,
-    title,
-    url
-  }`;
+_id,
+title,
+url
+}`;
 
     const pageInfo = await sanityClient.fetch(pageInfoQuery);
     const experiences = await sanityClient.fetch(experienceQuery);

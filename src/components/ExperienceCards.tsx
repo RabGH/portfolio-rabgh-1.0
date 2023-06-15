@@ -34,11 +34,16 @@ function ExperienceCards({ experience }: Props) {
                 md:rounded-full xl:h-[160px] xl:w-[160px]"
                     src={
                         experience.companyImage &&
-                        urlFor(experience.companyImage).auto("format").url().toString()
+                        urlFor(experience.companyImage)
+                            .auto("format")
+                            .url()
+                            .toString()
                     }
                     alt={experience?.company}
                     placeholder="blur"
                     blurDataURL="data:image/svg+xml;base64,..."
+                    width={200}
+                    height={200}
                 />
             </motion.div>
 
@@ -56,7 +61,10 @@ function ExperienceCards({ experience }: Props) {
                             className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                             src={
                                 technology.image &&
-                                urlFor(technology.image).auto("format").url().toString()
+                                urlFor(technology.image)
+                                    .auto("format")
+                                    .url()
+                                    .toString()
                             }
                             alt="Rabii Ghais"
                             width={100}
