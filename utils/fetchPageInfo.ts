@@ -1,12 +1,11 @@
 import { PageInfo } from "@lib/types";
+import { useRouter } from "next/router";
 
 export const fetchPageInfo = async () => {
-    const baseURL =
-        process.env.NODE_ENV === "development"
-            ? process.env.NEXT_PUBLIC_BASE_URL_DEV
-            : process.env.VERCEL_URL;
+    const router = useRouter();
+    const currentPath = router.asPath;
 
-    const res = await fetch(`${baseURL}/api/getPageInfo`);
+    const res = await fetch(`${currentPath}/api/getPageInfo`);
 
     const data = await res.json();
     const pageInfo: PageInfo = data.pageInfo;
