@@ -61,9 +61,11 @@ function Header({ socials }: Props) {
                         />
                     </IconButton>
                 </Link>
-                <p className="mt-3 hidden text-sm uppercase text-gray-400 md:inline-flex">
-                    Get In Touch
-                </p>
+                <Link href="#contact">
+                    <p className="mt-3 hidden text-sm uppercase text-gray-400 md:inline-flex">
+                        Get In Touch
+                    </p>
+                </Link>
             </motion.div>
         </header>
     );

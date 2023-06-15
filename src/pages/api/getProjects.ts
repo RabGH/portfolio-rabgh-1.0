@@ -8,7 +8,13 @@ const query = groq`
   title,
   summary,
   linkToSite,
-  linkToBuild
+  linkToBuild,
+  image,
+  technologies[]->{
+    title,
+    progress,
+    image
+  },
 }
 `;
 
