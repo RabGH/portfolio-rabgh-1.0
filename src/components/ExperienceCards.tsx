@@ -12,7 +12,7 @@ function ExperienceCards({}: Props) {
             pb-10 pl-10 pr-10 pt-1 opacity-40 transition-opacity 
             duration-200 scrollbar hover:opacity-100 
             sm:w-[500px] sm:pt-5 md:h-auto md:w-[600px] 
-            md:overflow-hidden xl:w-[900px]"
+            md:overflow-hidden xl:w-[900px] mt-20 s:mt-0"
         >
             <motion.img
                 initial={{ y: -100, opacity: 0 }}
@@ -27,7 +27,7 @@ function ExperienceCards({}: Props) {
             />
 
             <div className="px-0 md:px-10">
-                <h4 className="hidden text-2xl font-light md:mt-5 md:text-4xl xl:text-4xl xs:block">
+                <h4 className="hidden text-2xl font-light md:text-4xl">
                     Real Estate Website
                 </h4>
                 <p className="mt-1 text-2xl md:font-bold">ZakProperties</p>

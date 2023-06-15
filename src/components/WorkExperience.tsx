@@ -16,7 +16,7 @@ function WorkExperience({}: Props) {
             <h3 className="toptitle">Experience</h3>
 
             <div
-                className="mt-20 flex w-full snap-x snap-mandatory space-x-5 
+                className="flex w-full snap-x snap-mandatory space-x-5 
                 overflow-x-scroll p-10 scrollbar"
             >
                 <ExperienceCards />

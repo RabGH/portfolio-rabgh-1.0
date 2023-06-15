@@ -8,7 +8,6 @@ type Props = {
 function Skill({ directionLeft }: Props) {
     return (
         <div className="group relative flex cursor-pointer">
-            {/*Vercel*/}
             <motion.img
                 initial={{ x: directionLeft ? -100 : 100, opacity: 0 }}
                 transition={{ duration: 1 }}

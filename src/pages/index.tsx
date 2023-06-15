@@ -63,3 +63,56 @@ export default function Home() {
         </>
     );
 }
+const experiencesQuery = `*[_type == "experience"]{
+    jobTitle,
+    companyImage,
+    company,
+    dateStarted,
+    dateEnded,
+    isCurrentlyWorkingHere,
+    technologies[]->{
+      title,
+      progress,
+      image
+    },
+    points
+  }`
+
+  const pageInfosQuery = `*[_type == "pageInfo"]{
+    name,
+    role,
+    heroImage,
+    profilePic,
+    phoneNumber,
+    email,
+    address,
+    socials[]->{
+      title,
+      url
+    }
+  }`
+
+  const skillsQuery = `*[_type == "skill"]{
+    title,
+    progress,
+    image
+  }`
+  
+
+  const projectsQuery = `*[_type == "project"]{
+    title,
+    image,
+    summary,
+    technologies[]->{
+      title,
+      progress,
+      image
+    },
+    linkToBuild,
+    linkToSite
+  }`
+
+  const socialsQuery = `*[_type == "social"]{
+    title,
+    url
+  }`
