@@ -1,10 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Skill from "./Skill";
+import SingleSkill from "./SingleSkill";
+import { Skill } from "@lib/types";
 
-type Props = {};
+type Props = {
+    skills: Skill[];
+};
 
-function Skills({}: Props) {
+function MultiSkills({ skills }: Props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -24,19 +27,13 @@ function Skills({}: Props) {
                 Hover over a skill for currency proficiency
             </h3>
 
-            <div className="grid grid-cols-4 gap-5 overflow-hidden">
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
+            <div className="flex flex-wrap justify-center gap-5 overflow-hidden">
+                {skills?.map((skill) => (
+                    <SingleSkill key={skill._id} skill={skill} />
+                ))}
             </div>
         </motion.div>
     );
 }
 
-export default Skills;
+export default MultiSkills;

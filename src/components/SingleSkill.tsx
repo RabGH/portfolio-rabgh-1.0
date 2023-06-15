@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { Skill } from "@lib/types";
+import { urlFor } from "@lib/sanity";
 type Props = {
     directionLeft?: boolean;
+    skill: Skill;
 };
 
-function Skill({ directionLeft }: Props) {
+function SingleSkill({ directionLeft, skill }: Props) {
     return (
         <div className="group relative flex cursor-pointer">
             <motion.img
@@ -18,8 +20,8 @@ function Skill({ directionLeft }: Props) {
                 sm:h-24 sm:w-24 md:h-28 md:w-28 xl:h-32 xl:w-32 xxxs:h-[65px] xxxs:w-[65px] 
                 xxs:h-[79px] xxs:w-[79px]
                 xs:h-[88px] xs:w-[88px]"
-                src="/images/vercel.webp"
-                alt="Rabii Ghais"
+                src={urlFor(skill?.image).url()}
+                alt={skill?.title}
             />
             <div
                 className="h-22 w-22 absolute rounded-full opacity-0 transition duration-300 
@@ -30,7 +32,7 @@ function Skill({ directionLeft }: Props) {
             >
                 <div className="flex h-full items-center justify-center">
                     <p className="text-3xl font-bold text-black opacity-100">
-                        60%
+                        {skill?.progress}%
                     </p>
                 </div>
             </div>
@@ -38,4 +40,4 @@ function Skill({ directionLeft }: Props) {
     );
 }
 
-export default Skill;
+export default SingleSkill;

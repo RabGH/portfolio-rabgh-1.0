@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import WorkExperience from "@/components/WorkExperience";
-import Skills from "@/components/Skills";
+import MultiSkills from "@/components/MultiSkills";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import { Navbar } from "@/components/Navbar";
@@ -62,7 +62,7 @@ const Home: NextPage<Props> = ({
                 </section>
 
                 <section id="skills">
-                    <Skills />
+                    <MultiSkills skills={skills} />
                 </section>
 
                 <section id="projects">
