@@ -12,7 +12,7 @@ const query = groq`
   address,
   email,
   phoneNumber,
-  social
+  socials
 }
 `;
 
