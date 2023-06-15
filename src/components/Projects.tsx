@@ -22,14 +22,14 @@ function Projects({ projects }: Props) {
             <h3 className="toptitle">Projects</h3>
             <div
                 className="relative z-20 flex w-full 
-            snap-x snap-mandatory overflow-y-hidden overflow-x-scroll px-5 scrollbar xs:mt-0"
+                snap-x snap-mandatory overflow-y-hidden overflow-x-scroll px-5 scrollbar xs:mt-0"
             >
                 <div className="flex w-full flex-row space-x-5">
                     {projects.map((project, i) => (
                         <div
                             key={project._id}
                             className="xxl:w-4/5 w-screen flex-shrink-0 snap-center 
-                    flex-col items-center justify-center space-y-5 p-10 lg:mt-0"
+                            flex-col items-center justify-center space-y-5 p-10 lg:mt-0"
                         >
                             <div className="max-w-xxl mt-[63px] w-full rounded-lg bg-[rgb(36,36,36)]/70 p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl md:mt-20 xl:max-w-xl">
                                 <div className="flex items-center justify-between">
@@ -115,7 +115,7 @@ function Projects({ projects }: Props) {
             </div>
             <div
                 className="absolute left-0 top-[30%] h-[500px] 
-            w-full -skew-y-12 bg-[#F7AB0A]/10"
+w-full -skew-y-12 bg-[#F7AB0A]/10"
             />
         </motion.div>
     );

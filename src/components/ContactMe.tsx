@@ -1,11 +1,6 @@
 import React, { useState, useRef } from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
-import {
-    Snackbar,
-    CircularProgress,
-    FormControl,
-    Button,
-} from "@mui/material";
+import { Snackbar, CircularProgress, FormControl, Button } from "@mui/material";
 import Head from "next/head";
 
 const initialFormData = {
@@ -172,8 +167,9 @@ function ContactMe() {
                                 className="contactButtonStyles"
                                 sx={{
                                     color: "black",
+                                    backgroundColor: "#f5f5f5",
                                     "&:hover": {
-                                        backgroundColor: "#f5f5f5",
+                                        backgroundColor: "#F7AB0A",
                                     },
                                 }}
                             >
