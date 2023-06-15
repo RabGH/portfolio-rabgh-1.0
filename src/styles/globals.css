@@ -22,6 +22,14 @@
   }
 }
 
+html {
+  @apply scrollbar;
+}
+
+body {
+  @apply scrollbar;
+}
+
 .scrollbar {
   scroll-behavior: smooth;
 }
@@ -32,6 +40,7 @@
 
 .scrollbar::-webkit-scrollbar-thumb {
   background-color: #888;
+  border-radius: 20px;
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {

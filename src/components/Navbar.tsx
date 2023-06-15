@@ -45,14 +45,8 @@ export function Navbar() {
     }, [scrollPosition]);
 
     return (
-        <Headroom
-            style={{
-                position: "fixed",
-                zIndex: 1000,
-            }}
-            disableInlineStyles
-        >
-            <nav className="flex max-w-max animate-pulse items-center justify-center space-x-4 rounded-xl p-4 backdrop-blur-lg">
+        <div className="mb-10 flex w-full justify-center md:mb-20">
+            <nav className=" fixed flex max-w-max animate-pulse items-center justify-center space-x-4 rounded-xl p-4 backdrop-blur-lg">
                 <a href="#hero">
                     <HiHome
                         size={24}
@@ -120,6 +114,6 @@ export function Navbar() {
                     />
                 </a>
             </nav>
-        </Headroom>
+        </div>
     );
 }

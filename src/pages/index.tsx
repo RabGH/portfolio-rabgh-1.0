@@ -24,45 +24,36 @@ export default function Home() {
                     content="width=device-width, initial-scale=1.0"
                 />
             </Head>
-            <main className="z-0 flex h-full snap-y snap-mandatory flex-col bg-[rgb(36,36,36)] text-white">
+            <main className="z-0 flex h-full flex-col bg-[rgb(36,36,36)] text-white">
                 <div className="container">
                     <Header />
                 </div>
-                <section id="hero" className="snap-start">
+                <section id="hero">
                     <Hero />
                 </section>
 
-                <section id="about" className="snap-start">
+                <section id="about">
                     <About />
                 </section>
 
-                <section id="experience" className="snap-start">
+                <section id="experience">
                     <WorkExperience />
                 </section>
 
-                <section id="skills" className="snap-start">
+                <section id="skills">
                     <Skills />
                 </section>
 
-                <section id="projects" className="snap-start">
+                <section id="projects">
                     <Projects />
                 </section>
 
-                <section
-                    id="contact"
-                    className="h-screen"
-                    style={{ scrollSnapAlign: "center" }}
-                >
+                <section id="contact">
                     <ContactMe />
                 </section>
             </main>
             <motion.div
-                style={{
-                    position: "fixed",
-                    right: 125,
-                    zIndex: 1000,
-                }}
-                className="bottom-5 mx-auto flex w-full justify-center md:bottom-10"
+                className="z-1000 fixed bottom-5 mx-auto flex w-full justify-center md:bottom-10"
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 1 }}
