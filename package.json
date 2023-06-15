@@ -22,7 +22,6 @@
     "axios": "^1.4.0",
     "babel": "^6.23.0",
     "eslint": "8.42.0",
-    "eslint-config-next": "13.4.5",
     "framer-motion": "^10.12.16",
     "next": "^13.4.5",
     "next-sanity": "^4.3.3",
@@ -40,6 +39,7 @@
   "devDependencies": {
     "@sanity/cli": "^3.11.3",
     "@types/nodemailer": "^6.4.8",
+    "eslint-config-next": "^13.4.5",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "tailwind-scrollbar": "^3.0.4",
