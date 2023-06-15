@@ -4,7 +4,7 @@ export const fetchExperiences = async () => {
     const baseURL =
         process.env.NODE_ENV === "development"
             ? process.env.NEXT_PUBLIC_BASE_URL_DEV
-            : `https://${process.env.VERCEL_URL}`;
+            : process.env.NEXT_PUBLIC_BASE_URL_PROD;
 
     const res = await fetch(`${baseURL}/api/getExperiences`);
 
