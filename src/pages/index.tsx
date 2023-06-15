@@ -87,21 +87,35 @@ const Home: NextPage<Props> = ({
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async (context: any) => {
-    const pageInfo: PageInfo = await fetchPageInfo();
-    const experiences: Experience[] = await fetchExperiences();
-    const skills: Skill[] = await fetchSkills();
-    const projects: Project[] = await fetchProjects();
-    const socials: Social[] = await fetchSocials();
+export const getStaticProps: GetStaticProps = async () => {
+    const baseURL = process.env.VERCEL_URL;
+    const res = await fetch(`https://${baseURL}/api/getPageInfo`);
 
-    return {
-        props: {
-            experiences,
-            pageInfo,
-            skills,
-            projects,
-            socials,
-        },
-        revalidate: 60,
-    };
+    if (
+        res.ok &&
+        res.headers.get("content-type")?.includes("application/json")
+    ) {
+        const data = await res.json();
+        const pageInfo: PageInfo = data.pageInfo;
+
+        const experiences = await fetchExperiences();
+        const skills = await fetchSkills();
+        const projects = await fetchProjects();
+        const socials = await fetchSocials();
+
+        return {
+            props: {
+                pageInfo,
+                experiences,
+                skills,
+                projects,
+                socials,
+            },
+            revalidate: 1,
+        };
+    } else {
+        throw new Error(
+            `Fetch request failed: ${res.status} ${res.statusText}`
+        );
+    }
 };
