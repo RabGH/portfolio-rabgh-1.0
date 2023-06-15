@@ -9,13 +9,9 @@ import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import { Navbar } from "@/components/Navbar";
 import { motion } from "framer-motion";
-import { GetServerSideProps, GetStaticProps, NextPage } from "next/types";
+import { GetStaticProps, NextPage } from "next/types";
 import { PageInfo, Experience, Skill, Project, Social } from "@lib/types";
-import { fetchPageInfo } from "@utils/fetchPageInfo";
-import { fetchExperiences } from "@utils/fetchExperiences";
-import { fetchSkills } from "@utils/fetchSkills";
-import { fetchProjects } from "@utils/fetchProjects";
-import { fetchSocials } from "@utils/fetchSocials";
+import { sanityClient } from "@lib/sanity";
 
 type Props = {
     pageInfo: PageInfo;
@@ -87,35 +83,62 @@ const Home: NextPage<Props> = ({
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async () => {
-    const baseURL = process.env.VERCEL_URL;
-    const res = await fetch(`https://${baseURL}/api/getPageInfo`);
-
-    if (
-        res.ok &&
-        res.headers.get("content-type")?.includes("application/json")
-    ) {
-        const data = await res.json();
-        const pageInfo: PageInfo = data.pageInfo;
-
-        const experiences = await fetchExperiences();
-        const skills = await fetchSkills();
-        const projects = await fetchProjects();
-        const socials = await fetchSocials();
-
-        return {
-            props: {
-                pageInfo,
-                experiences,
-                skills,
-                projects,
-                socials,
-            },
-            revalidate: 1,
-        };
-    } else {
-        throw new Error(
-            `Fetch request failed: ${res.status} ${res.statusText}`
-        );
+export const getStaticProps: GetStaticProps = async () => {
+    const pageInfoQuery = `*[_type == "pageInfo"]{
+    title,
+    description
+  }[0]`;
+    const experienceQuery = `*[_type == "experience"]{
+    _id,
+    title,
+    summary,
+    linkToSite,
+    linkToBuild,
+    image,
+    technologies[]->{
+      _id,
+      title
     }
+  }`;
+    const skillQuery = `*[_type == "skill"]{
+    _id,
+    title,
+    progress,
+    image
+  }`;
+    const projectQuery = `*[_type == "project"]{
+    _id,
+    title,
+    summary,
+    linkToSite,
+    linkToBuild,
+    image,
+    technologies[]->{
+      _id,
+      title
+    }
+  }`;
+    const socialQuery = `*[_type == "social"]{
+    _id,
+    title,
+    url
+  }`;
+
+    const pageInfo = await sanityClient.fetch(pageInfoQuery);
+    const experiences = await sanityClient.fetch(experienceQuery);
+    const skills = await sanityClient.fetch(skillQuery);
+    const projects = await sanityClient.fetch(projectQuery);
+    const socials = await sanityClient.fetch(socialQuery);
+
+    // return the data as props
+    return {
+        props: {
+            pageInfo,
+            experiences,
+            skills,
+            projects,
+            socials,
+        },
+        revalidate: 1,
+    };
 };
