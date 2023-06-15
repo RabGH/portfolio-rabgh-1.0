@@ -33,9 +33,11 @@ function ExperienceCards({ experience }: Props) {
 
             <div className="px-0 md:px-10">
                 <h4 className="hidden text-2xl font-light md:text-4xl">
-                    Real Estate Website
+                    {experience?.jobTitle}
                 </h4>
-                <p className="mt-1 text-2xl md:font-bold">ZakProperties</p>
+                <p className="mt-1 text-2xl md:font-bold">
+                    {experience?.company}
+                </p>
                 <div className="my-2 flex space-x-2">
                     {experience.technologies.map((technology) => (
                         <Image
@@ -43,6 +45,8 @@ function ExperienceCards({ experience }: Props) {
                             className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                             src={urlFor(technology?.image).url()}
                             alt="Rabii Ghais"
+                            width={100}
+                            height={100}
                         />
                     ))}
                 </div>
