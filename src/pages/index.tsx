@@ -9,6 +9,8 @@ import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import { Navbar } from "@/components/Navbar";
 import { motion } from "framer-motion";
+import { sanityClient } from "@lib/sanity";
+import { Experience, PageInfo, Skill, Project, Social } from "@lib/types";
 
 export default function Home() {
     return (
@@ -63,56 +65,67 @@ export default function Home() {
         </>
     );
 }
-const experiencesQuery = `*[_type == "experience"]{
-    jobTitle,
-    companyImage,
-    company,
-    dateStarted,
-    dateEnded,
-    isCurrentlyWorkingHere,
-    technologies[]->{
+
+export const getServerSideProps = async (context: any) => {
+    const experiencesQuery = `*[_type == "experience"]{
+      jobTitle,
+      companyImage,
+      company,
+      dateStarted,
+      dateEnded,
+      isCurrentlyWorkingHere,
+      technologies[]->{
+        title,
+        progress,
+        image
+      },
+      points
+    }`;
+
+    const pageInfosQuery = `*[_type == "pageInfo"]{
+      name,
+      role,
+      heroImage,
+      profilePic,
+      phoneNumber,
+      email,
+      address,
+      socials[]->{
+        title,
+        url
+      }
+    }`;
+
+    const skillsQuery = `*[_type == "skill"]{
       title,
       progress,
       image
-    },
-    points
-  }`
+    }`;
 
-  const pageInfosQuery = `*[_type == "pageInfo"]{
-    name,
-    role,
-    heroImage,
-    profilePic,
-    phoneNumber,
-    email,
-    address,
-    socials[]->{
+    const projectsQuery = `*[_type == "project"]{
       title,
-      url
-    }
-  }`
+      image,
+      summary,
+      technologies[]->{
+        title,
+        progress,
+        image
+      },
+      linkToBuild,
+      linkToSite
+    }`;
 
-  const skillsQuery = `*[_type == "skill"]{
-    title,
-    progress,
-    image
-  }`
-  
+    const experiences = await sanityClient.fetch(experiencesQuery);
+    const pageInfos = await sanityClient.fetch(pageInfosQuery);
+    const skills = await sanityClient.fetch(skillsQuery);
+    const projects = await sanityClient.fetch(projectsQuery);
 
-  const projectsQuery = `*[_type == "project"]{
-    title,
-    image,
-    summary,
-    technologies[]->{
-      title,
-      progress,
-      image
-    },
-    linkToBuild,
-    linkToSite
-  }`
-
-  const socialsQuery = `*[_type == "social"]{
-    title,
-    url
-  }`
+    return {
+        props: {
+            experiences,
+            pageInfos,
+            skills,
+            projects,
+        },
+    };
+};
