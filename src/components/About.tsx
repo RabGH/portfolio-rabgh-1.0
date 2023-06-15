@@ -36,23 +36,7 @@ function About({ pageInfo }: Props) {
                     </span>{" "}
                     background
                 </h4>
-                <p className="text-sm">
-                    Hello, my name is Rabii Ghaith and I&apos;m a full-stack web
-                    developer with a passion for creating modern and responsive
-                    websites and applications. I have experience working with
-                    various technologies and languages, such as Next.js, React,
-                    TailwindCSS, HTML, and TypeScript for the front-end, and
-                    Sanity.io, a headless CMS, and Prisma MySQL for more
-                    in-depth data management for the back-end. I also use
-                    Material UI and other styled component libraries to create
-                    beautiful and consistent UI elements. I started my coding
-                    journey with Python projects and have since developed a keen
-                    interest in web development and design. I have worked on
-                    multiple sites using different libraries and frameworks to
-                    create dynamic and user-friendly interfaces. I enjoy
-                    learning new skills and tools to enhance my craft and
-                    deliver high-quality solutions for any type of website.{" "}
-                </p>
+                <p className="text-sm">{pageInfo?.backgroundInformation}</p>
             </div>
         </motion.div>
     );
