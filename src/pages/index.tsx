@@ -84,10 +84,19 @@ const Home: NextPage<Props> = ({
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-    const pageInfoQuery = `*[_type == "pageInfo"]{
-    title,
-    description
-  }[0]`;
+    const pageInfoQuery = `*[_type == "pageInfo"][0]{
+        _id,
+        name,
+        role,
+        profilePic,
+        heroImage,
+        address,
+        email,
+        phoneNumber,
+        socials,
+        backgroundInformation
+      }
+      `;
     const experienceQuery = `*[_type == "experience"]{
     _id,
     title,
@@ -130,7 +139,6 @@ export const getStaticProps: GetStaticProps = async () => {
     const projects = await sanityClient.fetch(projectQuery);
     const socials = await sanityClient.fetch(socialQuery);
 
-    // return the data as props
     return {
         props: {
             pageInfo,
@@ -139,6 +147,6 @@ export const getStaticProps: GetStaticProps = async () => {
             projects,
             socials,
         },
-        revalidate: 1,
+        revalidate: 60,
     };
 };
