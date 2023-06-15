@@ -4,11 +4,7 @@ import { sanityClient } from "@lib/sanity";
 import { Social } from "@lib/types";
 
 const query = groq`
-*[_type == "social"]{
-    _id,
-    title,
-    url
-}
+*[_type == "social"]
 `;
 
 type Data = {

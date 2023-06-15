@@ -4,12 +4,7 @@ import { sanityClient } from "@lib/sanity";
 import { Skill } from "@lib/types";
 
 const query = groq`
-*[_type == "skill"]{
-    _id,
-    title,
-    progress,
-    image
-}
+*[_type == "skill"]
 `;
 
 type Data = {
