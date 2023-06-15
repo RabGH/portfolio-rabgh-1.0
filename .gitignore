@@ -36,3 +36,5 @@ next-env.d.ts
 
 # Sanity
 sanity/node_modules
+
+.vercel
