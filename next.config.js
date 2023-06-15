@@ -6,6 +6,7 @@ const nextConfig = {
     },
     staticPageGenerationTimeout: 120,
     trailingSlash: true,
+    swcMinify: false
   };
   
   module.exports = nextConfig;
