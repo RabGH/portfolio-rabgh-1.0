@@ -4,7 +4,18 @@ import { sanityClient } from "@lib/sanity";
 import { PageInfo } from "@lib/types";
 
 const query = groq`
-*[_type == "pageInfo"][0]
+*[_type == "pageInfo"][0]{
+  _id,
+  name,
+  role,
+  profilePic,
+  heroImage,
+  address,
+  email,
+  phoneNumber,
+  socials,
+  backgroundInformation
+}
 `;
 
 type Data = {
