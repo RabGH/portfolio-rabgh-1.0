@@ -6,6 +6,8 @@ export const fetchPageInfo = async () => {
             ? process.env.NEXT_PUBLIC_BASE_URL_DEV
             : `https://${process.env.VERCEL_URL}`;
 
+    console.log("baseURL", baseURL);
+
     const res = await fetch(`${baseURL}/api/getPageInfo`);
 
     const data = await res.json();

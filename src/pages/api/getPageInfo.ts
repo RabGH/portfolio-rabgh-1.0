@@ -5,7 +5,7 @@ import { PageInfo } from "@lib/types";
 
 const query = groq`
 *[_type == "pageInfo"][0]{
-    _id,
+  _id,
   name,
   role,
   profilePic,
