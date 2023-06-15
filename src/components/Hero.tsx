@@ -16,7 +16,6 @@ function Hero({ pageInfo }: Props) {
             `${pageInfo?.name}.tsx: Web Developer`,
             `<React /> + <Next /> = ${pageInfo?.name}`,
             `({idea}: Figma) => <${pageInfo?.name} />`,
-            `<${pageInfo?.name} />: Code, Cook, Learn`,
         ],
         loop: true,
         delaySpeed: 2000,
