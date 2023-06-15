@@ -1,14 +1,17 @@
 import { Project } from "@lib/types";
 
 export const fetchProjects = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`
-  );
+    const baseURL =
+        process.env.NODE_ENV === "development"
+            ? process.env.NEXT_PUBLIC_BASE_URL_DEV
+            : process.env.NEXT_PUBLIC_BASE_URL_PROD;
 
-  const data = await res.json();
-  const projects: Project[] = data.projects;
+    const res = await fetch(`${baseURL}/api/getProjects`);
 
-  console.log("fetching", projects);
+    const data = await res.json();
+    const projects: Project[] = data.projects;
 
-  return projects;
+    console.log("fetching", projects);
+
+    return projects;
 };

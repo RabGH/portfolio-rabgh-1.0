@@ -1,14 +1,17 @@
 import { Skill } from "@lib/types";
 
 export const fetchSkills = async () => {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/getSkills`
-    );
+  const baseURL =
+    process.env.NODE_ENV === "development"
+      ? process.env.NEXT_PUBLIC_BASE_URL_DEV
+      : process.env.NEXT_PUBLIC_BASE_URL_PROD;
 
-    const data = await res.json()
-    const skills: Skill[] = data.skills;
+  const res = await fetch(`${baseURL}/api/getSkills`);
 
-    console.log("fetching", skills);
+  const data = await res.json();
+  const skills: Skill[] = data.skills;
 
-    return skills;
+  console.log("fetching", skills);
+
+  return skills;
 };

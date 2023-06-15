@@ -1,14 +1,17 @@
 import { Experience } from "@lib/types";
 
 export const fetchExperiences = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/getExperience`
-  );
+    const baseURL =
+        process.env.NODE_ENV === "development"
+            ? process.env.NEXT_PUBLIC_BASE_URL_DEV
+            : process.env.NEXT_PUBLIC_BASE_URL_PROD;
 
-  const data = await res.json();
-  const experiences: Experience[] = data.experiences;
+    const res = await fetch(`${baseURL}/api/getExperiences`);
 
-  console.log("fetching", experiences);
+    const data = await res.json();
+    const experiences: Experience[] = data.experiences;
 
-  return experiences;
+    console.log("fetching", experiences);
+
+    return experiences;
 };
