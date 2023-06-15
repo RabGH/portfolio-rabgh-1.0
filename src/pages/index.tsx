@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({
                 </section>
 
                 <section id="experience">
-                    <WorkExperience />
+                    <WorkExperience expreience={experiences} />
                 </section>
 
                 <section id="skills">

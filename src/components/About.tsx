@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { PageInfo } from "@lib/types";
+import { urlFor } from "@lib/sanity";
 
 type Props = {
     pageInfo: PageInfo;
@@ -25,7 +26,7 @@ function About({ pageInfo }: Props) {
                 className="md:h-65 h-66 -mb-20 hidden w-56 
                 flex-shrink-0 rounded-full object-cover
                 md:mb-0 md:block md:w-64 md:rounded-lg xl:h-[500px] xl:w-[300px]"
-                src={pageInfo?.profilePic}
+                src={urlFor(pageInfo?.profilePic).url()}
                 alt={pageInfo?.name}
             />
             <div className="mt-10 space-y-10 px-0 md:px-20">
