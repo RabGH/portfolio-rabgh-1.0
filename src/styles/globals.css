@@ -9,7 +9,7 @@
     hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40 
   }
   .toptitle {
-    @apply absolute top-10 md:text-2xl uppercase 
+    @apply absolute top-20 md:text-2xl uppercase 
     tracking-[20px] text-gray-500 
   }
   .contactInput {

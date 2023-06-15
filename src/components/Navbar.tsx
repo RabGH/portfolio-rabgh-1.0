@@ -48,11 +48,6 @@ export function Navbar() {
         <Headroom
             style={{
                 position: "fixed",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                bottom: 0,
                 zIndex: 1000,
             }}
             disableInlineStyles

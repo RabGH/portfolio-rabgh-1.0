@@ -7,51 +7,10 @@ import WorkExperience from "@/components/WorkExperience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
-import { useScrollToHash } from "@/components/hooks/scrollPageHook";
 import { Navbar } from "@/components/Navbar";
 import { motion } from "framer-motion";
 
-function useScrollPosition() {
-    const [scrollPosition, setScrollPosition] = React.useState(0);
-
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition(window.pageYOffset);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    return scrollPosition;
-}
-
 export default function Home() {
-    useScrollToHash();
-    const scrollPosition = useScrollPosition();
-
-    const heroOffsetTop = React.useRef(0);
-
-    React.useEffect(() => {
-        const heroElement = document.getElementById("hero");
-        if (heroElement) {
-            heroOffsetTop.current = heroElement.offsetTop;
-        }
-    }, []);
-
-    const [opacity, setOpacity] = React.useState(1);
-
-    React.useEffect(() => {
-        if (scrollPosition >= heroOffsetTop.current) {
-            setOpacity(1);
-        } else {
-            setOpacity(0);
-        }
-    }, [scrollPosition]);
-
     return (
         <>
             <Head>
@@ -66,42 +25,46 @@ export default function Home() {
                 />
             </Head>
             <main className="z-0 flex h-full snap-y snap-mandatory flex-col bg-[rgb(36,36,36)] text-white">
-                <Header />
-
-                <section id="hero" className="h-screen">
+                <div className="container">
+                    <Header />
+                </div>
+                <section id="hero" className="snap-start">
                     <Hero />
                 </section>
 
-                <section id="about" className="h-screen">
+                <section id="about" className="snap-start">
                     <About />
                 </section>
 
-                <section id="experience" className="h-screen">
+                <section id="experience" className="snap-start">
                     <WorkExperience />
                 </section>
 
-                <section id="skills" className="h-screen">
+                <section id="skills" className="snap-start">
                     <Skills />
                 </section>
 
-                <section id="projects" className="h-screen">
+                <section id="projects" className="snap-start">
                     <Projects />
                 </section>
 
-                <section id="contact" className="h-screen">
+                <section
+                    id="contact"
+                    className="h-screen"
+                    style={{ scrollSnapAlign: "center" }}
+                >
                     <ContactMe />
                 </section>
             </main>
             <motion.div
                 style={{
                     position: "fixed",
-                    right: 120,
+                    right: 125,
                     zIndex: 1000,
-                    opacity: opacity,
                 }}
-                className="bottom-5 flex w-full justify-center"
-                initial={{ y: "100%", opacity: opacity }}
-                animate={{ y: "0%", opacity: opacity }}
+                className="bottom-5 mx-auto flex w-full justify-center md:bottom-10"
+                initial={{ y: "100%" }}
+                animate={{ y: "0%" }}
                 transition={{ duration: 1 }}
             >
                 <Navbar />

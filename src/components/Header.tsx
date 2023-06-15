@@ -9,15 +9,12 @@ type Props = {};
 
 function Header({}: Props) {
     return (
-        <header
-            className="fixed top-0 z-20 mx-auto flex max-w-7xl 
-            items-start justify-between p-5 xl:items-center"
-        >
+        <header className="fixed top-0 z-20 mx-auto grid w-full grid-cols-12 items-center justify-center gap-4 p-5 md:mx-auto">
             <motion.div
                 initial={{ x: -500, opacity: 0, scale: 0.5 }}
                 animate={{ x: 0, opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5 }}
-                className="flex flex-row items-center"
+                className="col-span-6 flex flex-row items-center justify-start xl:col-span-3 xl:col-start-2 xl:justify-end"
             >
                 <SocialIcon
                     url="https://twitter.com/RABBIToCOM"
@@ -46,7 +43,7 @@ function Header({}: Props) {
                 initial={{ x: 500, opacity: 0, scale: 0.5 }}
                 animate={{ x: 0, opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5 }}
-                className="flex cursor-pointer flex-row items-center text-gray-300"
+                className="col-span-6 flex flex-row justify-end text-gray-300 xl:col-span-3 xl:col-end-12 xl:items-center xl:justify-start"
             >
                 <Link
                     href="mailto:rabiighais@gmail.com"
@@ -72,7 +69,7 @@ function Header({}: Props) {
                         />
                     </IconButton>
                 </Link>
-                <p className="hidden text-sm uppercase text-gray-400 md:inline-flex">
+                <p className="mt-3 hidden text-sm uppercase text-gray-400 md:inline-flex">
                     Get In Touch
                 </p>
             </motion.div>

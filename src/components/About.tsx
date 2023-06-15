@@ -25,7 +25,7 @@ function About({}: Props) {
                 src="/images/candidImage2.jpg"
                 alt="Rabii Ghais"
             />
-            <div className="space-y-10 px-0 md:px-20">
+            <div className="space-y-10 px-0 md:px-20 mt-10">
                 <h4 className="text-2xl font-semibold sm:mt-20 md:mt-10 md:block md:text-3xl xl:mt-10">
                     A{" "}
                     <span className="underline decoration-[#F7AB0A]/50">

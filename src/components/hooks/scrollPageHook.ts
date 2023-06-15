@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Link from "next/link";
 
 export function useScrollToHash() {
     const router = useRouter();
