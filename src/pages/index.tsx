@@ -9,7 +9,7 @@ import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import { Navbar } from "@/components/Navbar";
 import { motion } from "framer-motion";
-import { GetStaticProps, NextPage } from "next/types";
+import { GetServerSideProps, GetStaticProps, NextPage } from "next/types";
 import { PageInfo, Experience, Skill, Project, Social } from "@lib/types";
 import { fetchPageInfo } from "@utils/fetchPageInfo";
 import { fetchExperiences } from "@utils/fetchExperiences";
@@ -87,7 +87,7 @@ const Home: NextPage<Props> = ({
 
 export default Home;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
     const baseURL = process.env.VERCEL_URL;
     const res = await fetch(`https://${baseURL}/api/getPageInfo`);
 
