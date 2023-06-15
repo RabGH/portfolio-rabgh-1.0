@@ -15,7 +15,8 @@ const query = groq`
   technologies[]->{
     title,
     progress,
-    image
+    image,
+    _id
   },
   points
 }

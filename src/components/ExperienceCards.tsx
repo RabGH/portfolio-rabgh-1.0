@@ -13,7 +13,7 @@ function ExperienceCards({ experience }: Props) {
         <article
             className="mt-20 flex h-[550px] w-[350px] flex-shrink-0 
             cursor-pointer snap-center flex-col items-center 
-            space-y-0 overflow-hidden overflow-y-scroll rounded-lg 
+            space-y-0 overflow-hidden overflow-x-scroll rounded-lg 
           bg-[#292929] pb-10 pl-10 pr-10 pt-1 opacity-40 
             transition-opacity duration-200 scrollbar 
             hover:opacity-100 sm:w-[500px] sm:pt-5 md:h-auto 
@@ -38,7 +38,7 @@ function ExperienceCards({ experience }: Props) {
                 <p className="mt-1 text-2xl md:font-bold">
                     {experience?.company}
                 </p>
-                <div className="my-2 flex space-x-2">
+                <div className="mt-2 flex space-x-2">
                     {experience.technologies.map((technology) => (
                         <Image
                             key={technology._id}
@@ -57,7 +57,7 @@ function ExperienceCards({ experience }: Props) {
                         : new Date(experience?.dateEnded).toLocaleDateString()}
                 </p>
 
-                <ul className="overscroll-y-scroll ml-3 h-80 list-disc space-y-3 text-sm scrollbar">
+                <ul className="ml-1 list-disc space-y-2 overflow-scroll text-sm md:ml-3 md:space-y-3 md:text-base">
                     {experience?.points.map((point, i) => (
                         <li key={i}>{point}</li>
                     ))}
