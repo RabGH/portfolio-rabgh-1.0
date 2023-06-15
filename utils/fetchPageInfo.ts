@@ -1,9 +1,9 @@
 import { PageInfo } from "@lib/types";
 
-export const fetchPageInfo = async () => {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL_DEV}/api/getPageInfo`
-    );
+export const fetchPageInfo = async (context: any) => {
+    const pid = context.params.pid;
+
+    const res = await fetch(`${pid}/api/getPageInfo`);
 
     const data = await res.json();
     const pageInfo: PageInfo = data.pageInfo;
