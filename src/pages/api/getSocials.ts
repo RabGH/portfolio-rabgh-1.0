@@ -5,6 +5,7 @@ import { Social } from "@lib/types";
 
 const query = groq`
 *[_type == "social"]{
+    _id,
     title,
     url
 }

@@ -5,6 +5,7 @@ import { Project } from "@lib/types";
 
 const query = groq`
 *[_type == "project"]{
+  _id,
   title,
   summary,
   linkToSite,

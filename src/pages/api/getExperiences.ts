@@ -5,6 +5,7 @@ import { Experience } from "@lib/types";
 
 const query = groq`
 *[_type == "experience"]{
+  _id,
   jobTitle,
   companyImage,
   company,
