@@ -6,7 +6,7 @@ export const fetchSocials = async () => {
             ? process.env.NEXT_PUBLIC_BASE_URL_DEV
             : process.env.VERCEL_URL
 
-    const res = await fetch(`${baseURL}/api/getSocials`);
+    const res = await fetch(`https://${baseURL}/api/getSocials/`);
 
     const data = await res.json();
     const socials: Social[] = data.socials;

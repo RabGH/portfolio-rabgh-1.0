@@ -6,7 +6,7 @@ export const fetchProjects = async () => {
             ? process.env.NEXT_PUBLIC_BASE_URL_DEV
             : process.env.VERCEL_URL;
 
-    const res = await fetch(`${baseURL}/api/getProjects`);
+    const res = await fetch(`https://${baseURL}/api/getProjects/`);
 
     const data = await res.json();
     const projects: Project[] = data.projects;
