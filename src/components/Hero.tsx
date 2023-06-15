@@ -23,13 +23,20 @@ function Hero({ pageInfo }: Props) {
     return (
         <div className="flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center">
             <BackgroundCircles />
-            <Image
-                src={urlFor(pageInfo?.heroImage).url()}
-                alt={pageInfo?.name}
-                width={500}
-                height={500}
-                className="z-1000 relative mx-auto h-32 w-32 rounded-full object-cover"
-            />
+            {pageInfo.heroImage && (
+                <Image
+                    src={urlFor(pageInfo.heroImage)
+                        .auto("format")
+                        .url()
+                        .toString()}
+                    alt={pageInfo?.name}
+                    width={500}
+                    height={500}
+                    className="z-1000 relative mx-auto h-32 w-32 rounded-full object-cover"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,..."
+                />
+            )}
             <div className="z-20">
                 <h2 className="pb-2 text-sm uppercase tracking-[15px] text-gray-500">
                     {pageInfo?.role}

@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Skill } from "@lib/types";
 import { urlFor } from "@lib/sanity";
+import Image from "next/image";
+
 type Props = {
     directionLeft?: boolean;
     skill: Skill;
@@ -20,7 +22,10 @@ function SingleSkill({ directionLeft, skill }: Props) {
                 sm:h-24 sm:w-24 md:h-28 md:w-28 xl:h-32 xl:w-32 xxxs:h-[65px] xxxs:w-[65px] 
                 xxs:h-[79px] xxs:w-[79px]
                 xs:h-[88px] xs:w-[88px]"
-                src={urlFor(skill?.image).url()}
+                src={
+                    skill.image &&
+                    urlFor(skill.image).auto("format").url().toString()
+                }
                 alt={skill?.title}
             />
             <div

@@ -19,7 +19,7 @@ function ExperienceCards({ experience }: Props) {
             hover:opacity-100 sm:w-[500px] sm:pt-5 md:h-auto 
             md:w-[600px] md:overflow-hidden xl:w-[900px] s:mt-0"
         >
-            <motion.img
+            <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -27,9 +27,20 @@ function ExperienceCards({ experience }: Props) {
                 className="hidden h-28 w-28 rounded-full 
                 object-cover object-center md:block 
                 md:rounded-full xl:h-[160px] xl:w-[160px]"
-                src={urlFor(experience?.companyImage).url()}
-                alt={experience?.company}
-            />
+            >
+                <Image
+                    className="hidden h-28 w-28 rounded-full 
+                object-cover object-center md:block 
+                md:rounded-full xl:h-[160px] xl:w-[160px]"
+                    src={
+                        experience.companyImage &&
+                        urlFor(experience.companyImage).auto("format").url().toString()
+                    }
+                    alt={experience?.company}
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,..."
+                />
+            </motion.div>
 
             <div className="px-0 md:px-10">
                 <h4 className="hidden text-2xl font-light md:text-4xl">
@@ -43,10 +54,15 @@ function ExperienceCards({ experience }: Props) {
                         <Image
                             key={technology._id}
                             className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
-                            src={urlFor(technology?.image).url()}
+                            src={
+                                technology.image &&
+                                urlFor(technology.image).auto("format").url().toString()
+                            }
                             alt="Rabii Ghais"
                             width={100}
                             height={100}
+                            placeholder="blur"
+                            blurDataURL="data:image/svg+xml;base64,..."
                         />
                     ))}
                 </div>
