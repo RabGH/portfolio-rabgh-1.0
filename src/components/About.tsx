@@ -18,7 +18,7 @@ function About({ pageInfo }: Props) {
             flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
         >
             <h3 className="toptitle">About</h3>
-            <motion.img
+            {/* <motion.img
                 initial={{ x: -200, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -31,7 +31,7 @@ function About({ pageInfo }: Props) {
                     urlFor(pageInfo.profilePic).auto("format").url().toString()
                 }
                 alt={pageInfo?.name}
-            />
+            /> */}
             <div className="mt-10 space-y-10 px-0 md:px-20">
                 <h4 className="text-2xl font-semibold sm:mt-20 md:mt-10 md:block md:text-3xl xl:mt-10">
                     A{" "}
