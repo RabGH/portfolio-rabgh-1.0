@@ -17,12 +17,12 @@ function MultiSkills({ skills }: Props) {
             className="relative mx-auto flex h-screen 
             min-h-screen max-w-[2000px] flex-col items-center 
             justify-center text-center md:text-left xl:flex-row 
-            xl:space-y-0 xl:px-10"
+            xl:space-y-20 xl:px-10"
         >
             <h3 className="toptitle">Skills</h3>
             <h3
                 className="absolute top-20 mt-20 text-sm uppercase tracking-[3px] text-gray-500
-              md:text-base lg:mt-20"
+              md:text-base"
             >
                 Hover over a skill for currency proficiency
             </h3>

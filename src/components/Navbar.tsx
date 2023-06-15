@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Headroom from "react-headroom";
 import { useScrollPosition } from "@/components/hooks/scrollPageHook";
 import {
     HiHome,
@@ -45,7 +44,7 @@ export function Navbar() {
     }, [scrollPosition]);
 
     return (
-        <div className="mb-10 flex w-full justify-center md:mb-20">
+        <div className="mb-10 flex w-full justify-center md:mb-10">
             <nav className=" fixed flex max-w-max animate-pulse items-center justify-center space-x-4 rounded-xl p-4 backdrop-blur-lg">
                 <a href="#hero">
                     <HiHome
