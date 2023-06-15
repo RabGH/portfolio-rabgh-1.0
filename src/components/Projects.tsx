@@ -10,14 +10,14 @@ function Projects({}: Props) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="scrollbar relative z-0 mx-auto flex 
-            h-screen max-w-full flex-col items-center 
-            justify-evenly overflow-hidden text-left"
+            className="relative z-0 mx-auto flex h-screen 
+            max-w-full flex-col items-center justify-evenly 
+            overflow-hidden text-left scrollbar"
         >
             <h3 className="toptitle">Projects</h3>
             <div
-                className="scrollbar relative z-20 flex w-full 
-                 snap-x snap-mandatory overflow-y-hidden overflow-x-scroll"
+                className="relative z-20 flex w-full snap-x 
+                 snap-mandatory overflow-y-hidden overflow-x-scroll scrollbar"
             >
                 {projects.map((project, i) => (
                     <div
@@ -33,7 +33,7 @@ function Projects({}: Props) {
                             viewport={{ once: true }}
                             src="/images/RealEstateIcon.jpeg"
                             alt="Real Estate Site Test"
-                            className="mx-auto h-[220px] w-[220px] md:h-[500px] md:w-[500px] xxs:mt-0"
+                            className="mx-auto mt-10 h-[220px] w-[220px] md:h-[500px] md:w-[500px] xs:mt-0"
                         />
 
                         <div className="space-y-5 px-0 md:px-10">

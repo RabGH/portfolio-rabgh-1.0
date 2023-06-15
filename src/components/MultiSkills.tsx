@@ -21,16 +21,26 @@ function MultiSkills({ skills }: Props) {
         >
             <h3 className="toptitle">Skills</h3>
             <h3
-                className="absolute top-36 text-sm uppercase tracking-[3px]
-              text-gray-500"
+                className="absolute top-20 mt-20 text-sm uppercase tracking-[3px] text-gray-500
+              md:text-base lg:mt-20"
             >
                 Hover over a skill for currency proficiency
             </h3>
 
-            <div className="flex flex-wrap justify-center gap-5 overflow-hidden">
-                {skills?.map((skill) => (
-                    <SingleSkill key={skill._id} skill={skill} />
+            <div className="mt-20 grid grid-cols-4 gap-5 xs:mt-0">
+                {skills?.slice(0, skills?.length / 2)?.map((skill) => (
+                    <SingleSkill key={skill?._id} skill={skill} />
                 ))}
+
+                {skills
+                    ?.slice(skills?.length / 2, skills.length)
+                    ?.map((skill) => (
+                        <SingleSkill
+                            key={skill?._id}
+                            skill={skill}
+                            directionLeft
+                        />
+                    ))}
             </div>
         </motion.div>
     );

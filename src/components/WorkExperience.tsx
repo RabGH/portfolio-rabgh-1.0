@@ -20,7 +20,7 @@ function WorkExperience({ experiences }: Props) {
 
             <div
                 className="flex w-full snap-x snap-mandatory space-x-5 
-                overflow-x-scroll p-10 scrollbar"
+                overflow-x-scroll p-10 scrollbar lg:mt-60"
             >
                 {experiences?.map((experience) => (
                     <ExperienceCards
