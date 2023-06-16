@@ -17,7 +17,7 @@ function ExperienceCards({ experience }: Props) {
             bg-[#292929] pb-10 pl-10 pr-10 pt-1 opacity-40 
             transition-opacity duration-200 scrollbar 
             hover:opacity-100 sm:w-[500px] sm:pt-5 md:h-auto 
-            md:w-[600px] md:overflow-hidden lg:h-[700px] xl:w-[900px] s:mt-12"
+            md:w-[600px] md:overflow-hidden lg:h-[700px] xl:w-[750px] s:mt-12"
         >
             <motion.div
                 initial={{ y: -100, opacity: 0 }}
