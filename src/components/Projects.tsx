@@ -28,10 +28,10 @@ function Projects({ projects }: Props) {
                     {projects.map((project, i) => (
                         <div
                             key={project._id}
-                            className="xxl:w-4/5 w-screen flex-shrink-0 snap-center 
-                            flex-col flex items-center justify-center space-y-5 p-10 lg:mt-0"
+                            className="xxl:w-4/5 flex w-screen flex-shrink-0 
+                            snap-center flex-col items-center justify-center space-y-5 p-10 lg:mt-0"
                         >
-                            <div className="max-w-xxl mt-[63px] w-full rounded-lg bg-[rgb(36,36,36)]/70 p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl md:mt-20 xl:max-w-xl">
+                            <div className="mt-[63px] w-full rounded-lg bg-[rgb(36,36,36)]/70 p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl md:mt-20 xl:max-w-xl">
                                 <div className="flex items-center justify-between">
                                     <h4 className="text-xl font-semibold">
                                         {project?.title}
@@ -54,7 +54,7 @@ function Projects({ projects }: Props) {
                                                 .toString()
                                         }
                                         alt={project?.title}
-                                        className="mx-auto mt-5 hidden h-[140px] w-[220px] md:block md:h-[300px] md:w-[600px] xs:mt-0 xs:block"
+                                        className="mx-auto mt-5 hidden h-auto w-full md:block xs:mt-0 xs:block"
                                     />
                                     <p className="text-center text-base md:text-left s:text-lg">
                                         {project?.summary}
@@ -115,7 +115,7 @@ function Projects({ projects }: Props) {
             </div>
             <div
                 className="absolute left-0 top-[30%] h-[500px] 
-w-full -skew-y-12 bg-[#F7AB0A]/10"
+                w-full -skew-y-12 bg-[#F7AB0A]/10"
             />
         </motion.div>
     );
