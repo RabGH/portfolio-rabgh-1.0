@@ -11,7 +11,7 @@ type Props = {
 function ExperienceCards({ experience }: Props) {
     return (
         <article
-            className="mt-20 flex h-[550px] w-[350px] flex-shrink-0 
+            className="mt-10 flex h-[550px] w-[350px] flex-shrink-0 
             cursor-pointer snap-center flex-col items-center 
             space-y-0 overflow-hidden overflow-x-scroll rounded-lg 
             bg-[#292929] pb-10 pl-10 pr-10 pt-1 opacity-40 

@@ -11,7 +11,7 @@ type Props = {
 function ProjectCards({ project }: Props) {
     return (
         <article
-            className="mt-20 flex h-[650px] w-[350px] flex-shrink-0 
+            className="mt-12 flex h-[650px] w-[350px] flex-shrink-0 
             snap-center flex-col items-center 
             space-y-0 overflow-hidden overflow-x-scroll rounded-lg 
             bg-[#292929] pb-10 pl-10 pr-10 pt-1 
