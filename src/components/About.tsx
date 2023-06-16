@@ -12,7 +12,7 @@ function About({ pageInfo }: Props) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="vh-80 relative mx-auto flex max-w-7xl 
+            className="xl:h-50vh relative mx-auto flex max-w-7xl 
             flex-col items-center justify-evenly space-y-32 px-10 text-center md:flex-row md:text-left"
         >
             <h3 className="toptitle">About</h3>

@@ -12,6 +12,13 @@ module.exports = {
                     "2xl": "2560px",
                 },
             },
+            height: {
+                "50vh": "50vh",
+                "80vh": "80vh",
+                "90vh": "90vh",
+                "70vh": "70vh",
+                "110vh": "110vh",
+            },
             screens: {
                 // sm: 640px
                 // md: 768px

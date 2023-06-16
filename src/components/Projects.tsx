@@ -18,7 +18,7 @@ function Projects({ projects }: Props) {
             <h3 className="toptitle">Projects</h3>
             <div
                 className="flex w-full snap-x snap-mandatory space-x-5 
-                overflow-x-scroll p-10 scrollbar lg:mt-40"
+                overflow-x-scroll p-10 scrollbar"
             >
                 {projects?.map((project) => (
                     <ProjectCards key={project._id} project={project} />

@@ -12,13 +12,13 @@ type Props = {
 function ProjectCards({ project }: Props) {
     return (
         <article
-            className="mt-12 flex h-[600px] w-[350px] flex-shrink-0 snap-center 
+            className="mt-12 flex h-[570px] w-[350px] flex-shrink-0 snap-center 
             flex-col items-center space-y-0 overflow-hidden 
             overflow-x-scroll rounded-lg bg-[#292929] 
             pb-10 pl-10 pr-10 pt-1 transition-opacity 
             duration-200 scrollbar sm:w-[500px] 
             sm:pt-5 md:h-auto md:w-[500px] 
-            md:overflow-hidden lg:h-[730px] xl:w-[800px] s:mt-5 s:space-y-2"
+            md:overflow-hidden lg:h-[740px] xl:w-[800px] s:mt-15 s:space-y-2"
         >
             <h4 className="text-xl font-semibold">{project?.title}</h4>
             <div className="overflow-hidden overflow-y-scroll scrollbar">

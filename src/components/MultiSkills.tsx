@@ -14,7 +14,7 @@ function MultiSkills({ skills }: Props) {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
-            className="relative mx-auto flex h-screen 
+            className="relative mx-auto flex xl:h-70vh h-90vh
             max-w-[2000px] flex-col items-center 
             justify-center text-center md:text-left xl:flex-row"
         >
@@ -26,7 +26,7 @@ function MultiSkills({ skills }: Props) {
                 Hover over a skill for current proficiency
             </h3>
 
-            <div className="mt-20 grid animate-pulse grid-cols-4 gap-3 md:gap-5 s:mt-0">
+            <div className="mt-20 grid animate-pulse grid-cols-4 gap-3 md:gap-5 lg:mt-20">
                 {skills?.slice(0, skills?.length / 2)?.map((skill) => (
                     <SingleSkill key={skill?._id} skill={skill} />
                 ))}

@@ -72,13 +72,13 @@ function ContactMe() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div
-                className="relative mx-auto flex h-screen 
+                className="h-screen relative mx-auto flex 
                 max-w-7xl flex-col items-center justify-evenly px-10 
-                text-center md:flex-row md:text-left"
+                text-center md:flex-row md:text-left xl:h-80vh"
             >
                 <h3 className="toptitle">Contact</h3>
 
-                <div className="flex flex-col space-y-7 md:mt-0 xs:space-y-10">
+                <div className="mt-5 flex flex-col space-y-7 md:mt-0 xs:space-y-10">
                     <h4 className="text-center text-2xl font-semibold md:text-3xl">
                         Let me know what you{" "}
                         <span className="underline decoration-[#F7AB0A]/50">
@@ -167,9 +167,9 @@ function ContactMe() {
                                 className="contactButtonStyles"
                                 sx={{
                                     color: "black",
-                                    backgroundColor: "#F7AB0A",
+                                    backgroundColor: "#f5f5f5",
                                     "&:hover": {
-                                        backgroundColor: "#F7F7F7",
+                                        backgroundColor: "#F7AB0A",
                                     },
                                 }}
                             >
