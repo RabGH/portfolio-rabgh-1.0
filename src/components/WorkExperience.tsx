@@ -13,14 +13,13 @@ function WorkExperience({ experiences }: Props) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="text-lft relative mx-auto flex h-screen max-w-full flex-col
-            items-center justify-evenly overflow-hidden px-10 md:flex-row"
+            className="screenLayoutExpProj"
         >
             <h3 className="toptitle">Experience</h3>
 
             <div
                 className="flex w-full snap-x snap-mandatory space-x-5 
-                overflow-x-scroll p-10 scrollbar lg:mt-60"
+                overflow-x-scroll p-10 scrollbar lg:mt-40"
             >
                 {experiences?.map((experience) => (
                     <ExperienceCards

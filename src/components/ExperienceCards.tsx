@@ -17,7 +17,7 @@ function ExperienceCards({ experience }: Props) {
             bg-[#292929] pb-10 pl-10 pr-10 pt-1 opacity-40 
             transition-opacity duration-200 scrollbar 
             hover:opacity-100 sm:w-[500px] sm:pt-5 md:h-auto 
-            md:w-[600px] md:overflow-hidden xl:w-[900px] s:mt-0"
+            md:w-[600px] md:overflow-hidden xl:w-[900px] s:mt-12 lg:h-[800px]"
         >
             <motion.div
                 initial={{ y: -100, opacity: 0 }}
@@ -55,18 +55,18 @@ function ExperienceCards({ experience }: Props) {
                     {experience?.company}
                 </p>
                 <div className="mt-2 flex space-x-2">
-                    {experience.technologies.map((technology) => (
+                    {experience?.technologies?.map((technology) => (
                         <Image
-                            key={technology._id}
+                            key={technology?._id}
                             className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
                             src={
-                                technology.image &&
-                                urlFor(technology.image)
+                                technology?.image &&
+                                urlFor(technology?.image)
                                     .auto("format")
                                     .url()
                                     .toString()
                             }
-                            alt="Rabii Ghais"
+                            alt={technology?.title}
                             width={100}
                             height={100}
                             placeholder="blur"
@@ -81,7 +81,8 @@ function ExperienceCards({ experience }: Props) {
                         : new Date(experience?.dateEnded).toLocaleDateString()}
                 </p>
 
-                <ul className="ml-1 list-disc space-y-2 text-sm md:ml-3 md:space-y-3 md:text-base overflow-y scrollbar">
+                <ul className="overflow-y ml-3 list-disc space-y-2 text-sm scrollbar 
+                md:ml-3 md:space-y-3 md:text-base">
                     {experience?.points.map((point, i) => (
                         <li key={i}>{point}</li>
                     ))}
