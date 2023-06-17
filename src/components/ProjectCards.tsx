@@ -12,13 +12,13 @@ type Props = {
 function ProjectCards({ project }: Props) {
     return (
         <article
-            className="mt-12 flex h-[570px] w-[350px] flex-shrink-0 snap-center 
-            flex-col items-center space-y-0 overflow-hidden 
-            overflow-x-scroll rounded-lg bg-[#292929] 
-            pb-10 pl-10 pr-10 pt-1 transition-opacity 
-            duration-200 scrollbar sm:w-[500px] 
-            sm:pt-5 md:h-auto md:w-[500px] 
-            md:overflow-hidden lg:h-[740px] xl:w-[800px] s:mt-15 s:space-y-2"
+            className="s:mt-15 mt-12 flex h-[570px] w-[350px] flex-shrink-0 
+            snap-center flex-col items-center space-y-0 
+            overflow-hidden overflow-x-scroll rounded-lg 
+            bg-[#292929] pb-10 pl-10 pr-10 pt-1 
+            transition-opacity duration-200 scrollbar 
+            sm:w-[500px] sm:pt-5 md:h-auto 
+            md:w-[500px] md:overflow-hidden lg:h-[740px] xl:w-[800px] s:space-y-2"
         >
             <h4 className="text-xl font-semibold">{project?.title}</h4>
             <div className="overflow-hidden overflow-y-scroll scrollbar">
@@ -71,7 +71,7 @@ function ProjectCards({ project }: Props) {
                             href={project?.linkToBuild}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex flex-row items-center justify-center rounded-lg bg-[#F7AB0A] px-3 py-2 text-black"
+                            className="flex animate-pulse flex-row items-center justify-center rounded-lg bg-[#F7AB0A] px-3 py-2 text-black"
                         >
                             <FaGithub className="mr-2 h-5 w-5" />
                             <span className="hidden md:block">View Code</span>
@@ -88,7 +88,7 @@ function ProjectCards({ project }: Props) {
                             href={project?.linkToSite}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex flex-row items-center justify-center rounded-lg bg-[#F7AB0A] px-3 py-2 text-black"
+                            className="flex animate-pulse flex-row items-center justify-center rounded-lg bg-[#F7AB0A] px-3 py-2 text-black"
                         >
                             <FaGlobe className="mr-2 h-5 w-5" />
                             <span className="hidden md:block">Visit Site</span>

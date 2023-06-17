@@ -72,7 +72,7 @@ function ContactMe() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div
-                className="h-screen relative mx-auto flex 
+                className="relative mx-auto flex h-screen 
                 max-w-7xl flex-col items-center justify-evenly px-10 
                 text-center md:flex-row md:text-left xl:h-80vh"
             >
@@ -167,9 +167,9 @@ function ContactMe() {
                                 className="contactButtonStyles"
                                 sx={{
                                     color: "black",
-                                    backgroundColor: "#f5f5f5",
+                                    backgroundColor: "F7AB0A",
                                     "&:hover": {
-                                        backgroundColor: "#F7AB0A",
+                                        backgroundColor: "#F7F7F7",
                                     },
                                 }}
                             >
