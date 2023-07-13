@@ -115,7 +115,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const skillQuery = `*[_type == "skill"]{
             _id,
             title,
-            progress,
+            description,
             image
         }`;
     const projectQuery = `*[_type == "project"]{
