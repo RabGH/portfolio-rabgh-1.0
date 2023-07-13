@@ -76,23 +76,27 @@ function ProjectCards({ project }: Props) {
                             <FaGithub className="mr-2 h-5 w-5" />
                             <span className="hidden md:block">View Code</span>
                         </Button>
-                        <Button
-                            sx={{
-                                color: "black",
-                                backgroundColor: "#F7AB0A",
-                                "&:hover": {
-                                    backgroundColor: "#F7F7F7",
-                                },
-                            }}
-                            variant="contained"
-                            href={project?.linkToSite}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex animate-pulse flex-row items-center justify-center rounded-lg bg-[#F7AB0A] px-3 py-2 text-black"
-                        >
-                            <FaGlobe className="mr-2 h-5 w-5" />
-                            <span className="hidden md:block">Visit Site</span>
-                        </Button>
+                        {project?.linkToSite ? (
+                            <Button
+                                sx={{
+                                    color: "black",
+                                    backgroundColor: "#F7AB0A",
+                                    "&:hover": {
+                                        backgroundColor: "#F7F7F7",
+                                    },
+                                }}
+                                variant="contained"
+                                href={project?.linkToSite}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex animate-pulse flex-row items-center justify-center rounded-lg bg-[#F7AB0A] px-3 py-2 text-black"
+                            >
+                                <FaGlobe className="mr-2 h-5 w-5" />
+                                <span className="hidden md:block">
+                                    Visit Site
+                                </span>
+                            </Button>
+                        ) : null}
                     </div>
                 </div>
             </div>
