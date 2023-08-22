@@ -1,7 +1,7 @@
 export interface SanityBody {
     _createrAt: string;
     _id: string;
-    _rev: string;
+    _ref: string;
     _udpatedAt: string;
 }
 
