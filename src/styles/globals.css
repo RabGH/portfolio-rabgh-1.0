@@ -14,7 +14,7 @@
   }
   .screenLayoutExpProj {
     @apply text-left relative mx-auto flex max-w-full flex-col
-    items-center justify-evenly overflow-hidden px-10 md:flex-row;
+    items-center justify-evenly overflow-hidden px-5 md:flex-row;
   }
   .contactInput {
     @apply w-full h-auto outline-none bg-slate-400/10 rounded-md border-b px-5 
