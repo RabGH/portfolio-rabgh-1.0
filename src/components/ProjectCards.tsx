@@ -13,15 +13,15 @@ type Props = {
 function ProjectCards({ project }: Props) {
     return (
         <article
-            className="s:mt-15 mt-12 flex h-[570px] w-[350px] flex-shrink-0 
+            className="s:mt-15 mt-12 flex h-[577px] w-[370px] flex-shrink-0 
             snap-center flex-col items-center space-y-0 
-            overflow-hidden overflow-x-scroll rounded-lg 
+            overflow-hidden rounded-lg
             bg-[#292929] pb-10 pl-10 pr-10 pt-1 
             transition-opacity duration-200 scrollbar 
             sm:w-[500px] sm:pt-5 md:h-auto 
             md:w-[500px] md:overflow-hidden lg:h-[750px] xl:w-[800px] s:space-y-2"
         >
-            <h4 className="text-xl font-semibold xxs:text-base">
+            <h4 className="pb-2 text-xl font-semibold xxs:text-base">
                 {project?.title}
             </h4>
             <div className="overflow-hidden overflow-y-scroll scrollbar">
@@ -41,7 +41,7 @@ function ProjectCards({ project }: Props) {
                     />
                 </Link>
                 <div className="space-y-2 px-0 md:px-10">
-                    <div className="mt-2 flex space-x-2">
+                    <div className="mt-2 flex space-x-2 pt-2">
                         {project?.technologies?.map((technology) => (
                             <Image
                                 className="h-10 w-10 rounded-full xxs:h-8 xxs:w-8"
@@ -62,7 +62,7 @@ function ProjectCards({ project }: Props) {
                         ))}
                     </div>
 
-                    <p className="pl-3 pr-3 text-center text-sm md:text-left s:text-lg">
+                    <p className="pt-2 pl-3 pr-3 text-center text-sm md:pl-0 md:pr-0 lg:text-left s:text-lg">
                         {project?.summary}
                     </p>
                     <div className="md:justify-left flex flex-row items-center justify-center space-x-5">

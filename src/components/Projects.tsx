@@ -11,15 +11,19 @@ type Props = {
 function Projects({ projects }: Props) {
     const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
+    const getScrollDistance = () => {
+        return window.innerWidth >= 960 ? 500 : 300;
+    };
+
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollLeft -= 300;
+            scrollContainerRef.current.scrollLeft -= getScrollDistance();
         }
     };
 
     const scrollRight = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollLeft += 300;
+            scrollContainerRef.current.scrollLeft += getScrollDistance();
         }
     };
     return (
@@ -40,7 +44,7 @@ function Projects({ projects }: Props) {
                 </button>
                 <div
                     ref={scrollContainerRef}
-                    className="flex snap-x snap-mandatory space-x-8 overflow-x-scroll p-10 scrollbar"
+                    className="flex snap-x snap-mandatory space-x-10 overflow-x-scroll p-10 scrollbar"
                 >
                     {projects?.map((project) => (
                         <ProjectCards key={project._id} project={project} />
