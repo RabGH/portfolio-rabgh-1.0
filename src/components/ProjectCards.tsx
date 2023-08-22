@@ -19,7 +19,7 @@ function ProjectCards({ project }: Props) {
             bg-[#292929] pb-10 pl-10 pr-10 pt-1 
             transition-opacity duration-200 scrollbar 
             sm:w-[500px] sm:pt-5 md:h-auto 
-            md:w-[500px] md:overflow-hidden lg:h-[740px] xl:w-[800px] s:space-y-2"
+            md:w-[500px] md:overflow-hidden lg:h-[750px] xl:w-[800px] s:space-y-2"
         >
             <h4 className="text-xl font-semibold xxs:text-base">
                 {project?.title}

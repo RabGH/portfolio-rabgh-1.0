@@ -40,7 +40,7 @@ function Projects({ projects }: Props) {
                 </button>
                 <div
                     ref={scrollContainerRef}
-                    className="flex snap-x snap-mandatory space-x-5 overflow-x-scroll p-10 scrollbar"
+                    className="flex snap-x snap-mandatory space-x-8 overflow-x-scroll p-10 scrollbar"
                 >
                     {projects?.map((project) => (
                         <ProjectCards key={project._id} project={project} />
