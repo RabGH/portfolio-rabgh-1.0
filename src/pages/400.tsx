@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function Custom500() {
+function Custom400() {
     return (
         <div className="container">
             <h1>400 - Page not found</h1>
@@ -14,4 +14,4 @@ function Custom500() {
     );
 }
 
-export default Custom500;
+export default Custom400;
