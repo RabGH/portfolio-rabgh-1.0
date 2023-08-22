@@ -27,6 +27,7 @@ function Header({ socials }: Props) {
                         rel="noopener noreferrer"
                         fgColor="gray"
                         bgColor="transparent"
+                        className={"hover:scale-125"}
                     />
                 ))}
             </motion.div>
@@ -45,7 +46,7 @@ function Header({ socials }: Props) {
                     <IconButton>
                         <FaEnvelope
                             fontSize="2rem"
-                            className="animate-pulse text-[#F7AB0A]/40"
+                            className="animate-pulse text-[#F7AB0A]/40 hover:scale-125"
                         />
                     </IconButton>
                 </Link>
@@ -57,7 +58,7 @@ function Header({ socials }: Props) {
                     <IconButton>
                         <FaWhatsapp
                             fontSize="2rem"
-                            className="animate-pulse text-[#F7AB0A]/40"
+                            className="animate-pulse text-[#F7AB0A]/40 hover:scale-125"
                         />
                     </IconButton>
                 </Link>
