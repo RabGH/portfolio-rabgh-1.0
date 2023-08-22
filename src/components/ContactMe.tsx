@@ -101,12 +101,12 @@ function ContactMe() {
                             </p>
                         </div>
 
-                        <div className="flex items-center justify-center space-x-3">
+                        {/* <div className="flex items-center justify-center space-x-3">
                             <MapPinIcon className="h-6 w-6 animate-pulse text-[#F7AB0A] md:h-8 md:w-8" />
                             <p className="text-1xl md:text-2xl">
                                 Lebanon, Beirut
                             </p>
-                        </div>
+                        </div> */}
                     </div>
                     <form
                         id="ContactForm"
