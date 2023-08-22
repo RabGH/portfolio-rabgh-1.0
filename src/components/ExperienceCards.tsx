@@ -13,7 +13,7 @@ function ExperienceCards({ experience }: Props) {
         <article
             className="mt-10 flex h-[550px] w-[325px] flex-shrink-0 
             cursor-pointer snap-center flex-col items-center 
-            space-y-0 overflow-hidden overflow-x-scroll rounded-lg 
+            space-y-0 overflow-hidden overflow-x-scroll rounded-xl 
             bg-[#292929] pb-10 pl-10 pr-10 pt-1 opacity-40 
             transition-opacity duration-200 scrollbar 
             hover:opacity-100 sm:w-[500px] sm:pt-5 md:h-auto 

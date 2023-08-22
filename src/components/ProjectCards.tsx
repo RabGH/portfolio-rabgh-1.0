@@ -4,6 +4,7 @@ import { urlFor } from "@lib/sanity";
 import Image from "next/image";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { Button } from "@mui/material";
+import Link from "next/link";
 
 type Props = {
     project: Project;
@@ -20,19 +21,25 @@ function ProjectCards({ project }: Props) {
             sm:w-[500px] sm:pt-5 md:h-auto 
             md:w-[500px] md:overflow-hidden lg:h-[740px] xl:w-[800px] s:space-y-2"
         >
-            <h4 className="text-xl font-semibold">{project?.title}</h4>
+            <h4 className="text-xl font-semibold xxs:text-base">
+                {project?.title}
+            </h4>
             <div className="overflow-hidden overflow-y-scroll scrollbar">
-                <Image
-                    src={
-                        project.image &&
-                        urlFor(project.image).auto("format").url().toString()
-                    }
-                    height={720}
-                    width={1024}
-                    alt={project?.title}
-                    className="mx-auto mt-5 hidden h-auto w-full md:block xxs:block xs:mt-0"
-                />
-
+                <Link href={project?.linkToBuild}>
+                    <Image
+                        src={
+                            project.image &&
+                            urlFor(project.image)
+                                .auto("format")
+                                .url()
+                                .toString()
+                        }
+                        height={720}
+                        width={1024}
+                        alt={project?.title}
+                        className="mx-auto mt-5 hidden h-auto w-full md:block xxs:block xs:mt-0"
+                    />
+                </Link>
                 <div className="space-y-2 px-0 md:px-10">
                     <div className="mt-2 flex space-x-2">
                         {project?.technologies?.map((technology) => (
@@ -55,7 +62,7 @@ function ProjectCards({ project }: Props) {
                         ))}
                     </div>
 
-                    <p className="text-center text-sm md:text-left s:text-lg">
+                    <p className="pl-3 pr-3 text-center text-sm md:text-left s:text-lg">
                         {project?.summary}
                     </p>
                     <div className="md:justify-left flex flex-row items-center justify-center space-x-5">

@@ -34,14 +34,23 @@ function WorkExperience({ experiences }: Props) {
 
             <div
                 className="flex w-full snap-x snap-mandatory
-                overflow-x-scroll pt-10 scrollbar"
+                overflow-x-scroll  scrollbar"
             >
-                <button className="" onClick={scrollLeft}>
+                <button
+                    className=""
+                    onClick={scrollLeft}
+                    style={{
+                        visibility:
+                            scrollContainerRef.current?.scrollLeft === 0
+                                ? "hidden"
+                                : "visible",
+                    }}
+                >
                     <FiChevronLeft className="animate-pulse" />
                 </button>
                 <div
                     ref={scrollContainerRef}
-                    className="flex snap-x snap-mandatory overflow-x-scroll p-5 scrollbar"
+                    className="flex snap-x snap-mandatory space-x-10 overflow-x-scroll pt-10 scrollbar"
                 >
                     {experiences?.map((experience) => (
                         <ExperienceCards
