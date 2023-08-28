@@ -37,7 +37,7 @@ function ProjectCards({ project }: Props) {
                         height={720}
                         width={1024}
                         alt={project?.title}
-                        className="mx-auto mt-5 hidden h-auto w-full md:block xxs:block xs:mt-0"
+                        className="mx-auto mt-5 hidden h-auto w-full rounded-xl md:block xxs:block xs:mt-0"
                     />
                 </Link>
                 <div className="space-y-2 px-0 md:px-10">
@@ -62,9 +62,10 @@ function ProjectCards({ project }: Props) {
                         ))}
                     </div>
 
-                    <p className="pt-2 pl-3 pr-3 text-center text-sm md:pl-0 md:pr-0 lg:text-left s:text-lg">
+                    <p className="pl-3 pr-3 pt-2 text-center text-sm md:pl-0 md:pr-0 lg:text-left s:text-lg">
                         {project?.summary}
                     </p>
+                    {/**/}
                     <div className="md:justify-left flex flex-row items-center justify-center space-x-5">
                         <Button
                             sx={{
@@ -105,6 +106,7 @@ function ProjectCards({ project }: Props) {
                             </Button>
                         ) : null}
                     </div>
+                    {/**/}
                 </div>
             </div>
         </article>
