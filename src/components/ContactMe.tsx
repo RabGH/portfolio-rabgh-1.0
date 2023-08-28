@@ -80,9 +80,9 @@ function ContactMe() {
 
                 <div className="mt-5 flex flex-col space-y-7 md:mt-0 xs:space-y-10">
                     <h4 className="text-center text-2xl font-semibold md:text-3xl">
-                        Let me know what you{" "}
+                        Contact me for{" "}
                         <span className="underline decoration-[#F7AB0A]/50">
-                            need.
+                            services.
                         </span>
                     </h4>
 
